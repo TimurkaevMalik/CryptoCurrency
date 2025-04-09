@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  СryptoСurrency
+//  Сryptocurrency
 //
 //  Created by Malik Timurkaev on 09.04.2025.
 //

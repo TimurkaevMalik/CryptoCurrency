@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		BC021CD42DA6708500F9D5AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC021CCA2DA6708500F9D5AA /* AppDelegate.swift */; };
 		BC021CD52DA6708500F9D5AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC021CD12DA6708500F9D5AA /* SceneDelegate.swift */; };
-		BC021CD62DA6708500F9D5AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC021CD22DA6708500F9D5AA /* ViewController.swift */; };
+		BC021CD62DA6708500F9D5AA /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC021CD22DA6708500F9D5AA /* AuthViewController.swift */; };
 		BC021CD72DA6708500F9D5AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC021CCB2DA6708500F9D5AA /* Assets.xcassets */; };
 		BC021CD92DA6708500F9D5AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC021CCE2DA6708500F9D5AA /* LaunchScreen.storyboard */; };
+		BCAB55F92DA6ABD400173AC7 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB55F82DA6ABC900173AC7 /* AuthTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +22,8 @@
 		BC021CCC2DA6708500F9D5AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC021CCD2DA6708500F9D5AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC021CD12DA6708500F9D5AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BC021CD22DA6708500F9D5AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BC021CD22DA6708500F9D5AA /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		BCAB55F82DA6ABC900173AC7 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		BC021CD32DA6708500F9D5AA /* СryptoСurrency */ = {
 			isa = PBXGroup;
 			children = (
+				BCAB55F72DA6ABB500173AC7 /* CustomViews */,
 				BCAB55F52DA6869200173AC7 /* Models */,
 				BCAB55F42DA6863900173AC7 /* Screens */,
 				BC021CCB2DA6708500F9D5AA /* Assets.xcassets */,
@@ -68,7 +71,7 @@
 		BCAB55F42DA6863900173AC7 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				BC021CD22DA6708500F9D5AA /* ViewController.swift */,
+				BCAB55F62DA6AB4F00173AC7 /* Auth */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -78,6 +81,22 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BCAB55F62DA6AB4F00173AC7 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				BC021CD22DA6708500F9D5AA /* AuthViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		BCAB55F72DA6ABB500173AC7 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				BCAB55F82DA6ABC900173AC7 /* AuthTextField.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,8 +173,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC021CD42DA6708500F9D5AA /* AppDelegate.swift in Sources */,
+				BCAB55F92DA6ABD400173AC7 /* AuthTextField.swift in Sources */,
 				BC021CD52DA6708500F9D5AA /* SceneDelegate.swift in Sources */,
-				BC021CD62DA6708500F9D5AA /* ViewController.swift in Sources */,
+				BC021CD62DA6708500F9D5AA /* AuthViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
