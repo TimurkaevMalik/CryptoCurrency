@@ -33,11 +33,11 @@ final class AuthTextField: UITextField {
     }
     
     private func configureTextField() {
-        heightAnchor.constraint(equalToConstant: 55).isActive = true
+        heightAnchor.constraint(equalToConstant: .loginButtonHeight).isActive = true
         font = .textField
         layer.cornerRadius = 25
         layer.masksToBounds = true
-        backgroundColor = .ypWhite
+        backgroundColor = .ypWhite.withAlphaComponent(0.8)
         textColor = .ypBlack
         
         let placeholder: String
