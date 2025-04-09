@@ -15,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BC021CB22DA6707E00F9D5AA /* СryptoСurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "СryptoСurrency.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC021CB22DA6707E00F9D5AA /* Сryptoсurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Сryptoсurrency.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC021CCA2DA6708500F9D5AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC021CCB2DA6708500F9D5AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC021CCC2DA6708500F9D5AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		BC021CB32DA6707E00F9D5AA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BC021CB22DA6707E00F9D5AA /* СryptoСurrency.app */,
+				BC021CB22DA6707E00F9D5AA /* Сryptoсurrency.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,9 +83,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BC021CB12DA6707E00F9D5AA /* СryptoСurrency */ = {
+		BC021CB12DA6707E00F9D5AA /* Сryptoсurrency */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BC021CC52DA6708000F9D5AA /* Build configuration list for PBXNativeTarget "СryptoСurrency" */;
+			buildConfigurationList = BC021CC52DA6708000F9D5AA /* Build configuration list for PBXNativeTarget "Сryptoсurrency" */;
 			buildPhases = (
 				BC021CAE2DA6707E00F9D5AA /* Sources */,
 				BC021CAF2DA6707E00F9D5AA /* Frameworks */,
@@ -95,11 +95,11 @@
 			);
 			dependencies = (
 			);
-			name = "СryptoСurrency";
+			name = "Сryptoсurrency";
 			packageProductDependencies = (
 			);
 			productName = "СryptoСurrency";
-			productReference = BC021CB22DA6707E00F9D5AA /* СryptoСurrency.app */;
+			productReference = BC021CB22DA6707E00F9D5AA /* Сryptoсurrency.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -117,7 +117,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BC021CAD2DA6707E00F9D5AA /* Build configuration list for PBXProject "СryptoСurrency" */;
+			buildConfigurationList = BC021CAD2DA6707E00F9D5AA /* Build configuration list for PBXProject "Сryptoсurrency" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -131,7 +131,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BC021CB12DA6707E00F9D5AA /* СryptoСurrency */,
+				BC021CB12DA6707E00F9D5AA /* Сryptoсurrency */,
 			);
 		};
 /* End PBXProject section */
@@ -355,7 +355,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BC021CAD2DA6707E00F9D5AA /* Build configuration list for PBXProject "СryptoСurrency" */ = {
+		BC021CAD2DA6707E00F9D5AA /* Build configuration list for PBXProject "Сryptoсurrency" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BC021CC82DA6708000F9D5AA /* Debug */,
@@ -364,7 +364,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BC021CC52DA6708000F9D5AA /* Build configuration list for PBXNativeTarget "СryptoСurrency" */ = {
+		BC021CC52DA6708000F9D5AA /* Build configuration list for PBXNativeTarget "Сryptoсurrency" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BC021CC62DA6708000F9D5AA /* Debug */,
