@@ -16,7 +16,6 @@ final class AuthTextField: UITextField {
     
     private let type: FieldType
     private let iconView = UIImageView()
-    private let iconContainer = UIView()
     private let textPadding = UIEdgeInsets(top: 0,
                                            left: 62,
                                            bottom: 0,
@@ -25,7 +24,7 @@ final class AuthTextField: UITextField {
     init(type: FieldType) {
         self.type = type
         super.init(frame: .zero)
-        configure()
+        configureTextField()
         setupIcon()
     }
     
@@ -33,8 +32,9 @@ final class AuthTextField: UITextField {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configure() {
+    private func configureTextField() {
         heightAnchor.constraint(equalToConstant: 55).isActive = true
+        font = .textField
         layer.cornerRadius = 25
         layer.masksToBounds = true
         backgroundColor = .ypWhite

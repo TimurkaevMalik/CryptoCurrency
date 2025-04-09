@@ -13,6 +13,7 @@
 		BC021CD72DA6708500F9D5AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC021CCB2DA6708500F9D5AA /* Assets.xcassets */; };
 		BC021CD92DA6708500F9D5AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC021CCE2DA6708500F9D5AA /* LaunchScreen.storyboard */; };
 		BCAB55F92DA6ABD400173AC7 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB55F82DA6ABC900173AC7 /* AuthTextField.swift */; };
+		BCAB55FD2DA6BBFC00173AC7 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB55FC2DA6BBF400173AC7 /* UIFont.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		BC021CD12DA6708500F9D5AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BC021CD22DA6708500F9D5AA /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		BCAB55F82DA6ABC900173AC7 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
+		BCAB55FC2DA6BBF400173AC7 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		BC021CD32DA6708500F9D5AA /* СryptoСurrency */ = {
 			isa = PBXGroup;
 			children = (
+				BCAB55FA2DA6BBDF00173AC7 /* Helpers */,
 				BCAB55F72DA6ABB500173AC7 /* CustomViews */,
 				BCAB55F52DA6869200173AC7 /* Models */,
 				BCAB55F42DA6863900173AC7 /* Screens */,
@@ -97,6 +100,22 @@
 				BCAB55F82DA6ABC900173AC7 /* AuthTextField.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		BCAB55FA2DA6BBDF00173AC7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BCAB55FB2DA6BBE800173AC7 /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		BCAB55FB2DA6BBE800173AC7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BCAB55FC2DA6BBF400173AC7 /* UIFont.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +194,7 @@
 				BC021CD42DA6708500F9D5AA /* AppDelegate.swift in Sources */,
 				BCAB55F92DA6ABD400173AC7 /* AuthTextField.swift in Sources */,
 				BC021CD52DA6708500F9D5AA /* SceneDelegate.swift in Sources */,
+				BCAB55FD2DA6BBFC00173AC7 /* UIFont.swift in Sources */,
 				BC021CD62DA6708500F9D5AA /* AuthViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

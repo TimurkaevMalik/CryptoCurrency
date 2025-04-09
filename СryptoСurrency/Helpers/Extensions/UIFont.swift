@@ -1,0 +1,14 @@
+//
+//  UIFont.swift
+//  Сryptoсurrency
+//
+//  Created by Malik Timurkaev on 09.04.2025.
+//
+
+import UIKit
+
+extension UIFont {
+    static var textField: UIFont {
+        UIFont.systemFont(ofSize: 15, weight: .regular)
+    }
+}
