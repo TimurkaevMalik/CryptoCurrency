@@ -54,14 +54,30 @@
 		BC021CD32DA6708500F9D5AA /* СryptoСurrency */ = {
 			isa = PBXGroup;
 			children = (
-				BC021CCA2DA6708500F9D5AA /* AppDelegate.swift */,
-				BC021CD12DA6708500F9D5AA /* SceneDelegate.swift */,
+				BCAB55F52DA6869200173AC7 /* Models */,
+				BCAB55F42DA6863900173AC7 /* Screens */,
 				BC021CCB2DA6708500F9D5AA /* Assets.xcassets */,
 				BC021CCC2DA6708500F9D5AA /* Info.plist */,
 				BC021CCE2DA6708500F9D5AA /* LaunchScreen.storyboard */,
-				BC021CD22DA6708500F9D5AA /* ViewController.swift */,
+				BC021CCA2DA6708500F9D5AA /* AppDelegate.swift */,
+				BC021CD12DA6708500F9D5AA /* SceneDelegate.swift */,
 			);
 			path = "СryptoСurrency";
+			sourceTree = "<group>";
+		};
+		BCAB55F42DA6863900173AC7 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				BC021CD22DA6708500F9D5AA /* ViewController.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		BCAB55F52DA6869200173AC7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
