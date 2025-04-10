@@ -33,8 +33,8 @@ final class AuthViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             loginButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -133),
-            loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
-            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25)
+            loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .defaultMargin),
+            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -.defaultMargin)
         ])
     }
     
@@ -44,8 +44,8 @@ final class AuthViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             passwordTextField.bottomAnchor.constraint(equalTo: loginButton.topAnchor, constant: -25),
-            passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
-            passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25)
+            passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .defaultMargin),
+            passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -.defaultMargin)
         ])
     }
     
@@ -55,14 +55,15 @@ final class AuthViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             loginTextField.bottomAnchor.constraint(equalTo: passwordTextField.topAnchor, constant: -15),
-            loginTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
-            loginTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25)
+            loginTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .defaultMargin),
+            loginTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -.defaultMargin)
         ])
     }
     
     private func setupRobotImage() {
         robotImageView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(robotImageView)
+        robotImageView.contentMode = .scaleAspectFit
         
         NSLayoutConstraint.activate([
             robotImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 13),
