@@ -16,6 +16,8 @@
 		BCAB55FD2DA6BBFC00173AC7 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB55FC2DA6BBF400173AC7 /* UIFont.swift */; };
 		BCAB55FF2DA6BFF200173AC7 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB55FE2DA6BFE700173AC7 /* LoginButton.swift */; };
 		BCAB56012DA6C17200173AC7 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB56002DA6C16D00173AC7 /* CGFloat.swift */; };
+		BCE32B072DA7EE0B00FFD51C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B062DA7EE0000FFD51C /* AuthService.swift */; };
+		BCE32B0A2DA7F12B00FFD51C /* ServiceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B092DA7F11F00FFD51C /* ServiceProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		BCAB55FC2DA6BBF400173AC7 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		BCAB55FE2DA6BFE700173AC7 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		BCAB56002DA6C16D00173AC7 /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
+		BCE32B062DA7EE0000FFD51C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		BCE32B092DA7F11F00FFD51C /* ServiceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 		BCAB55F62DA6AB4F00173AC7 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				BCE32B062DA7EE0000FFD51C /* AuthService.swift */,
 				BC021CD22DA6708500F9D5AA /* AuthViewController.swift */,
 			);
 			path = Auth;
@@ -110,6 +115,7 @@
 		BCAB55FA2DA6BBDF00173AC7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				BCE32B082DA7F11500FFD51C /* Protocols */,
 				BCAB55FB2DA6BBE800173AC7 /* Extensions */,
 			);
 			path = Helpers;
@@ -122,6 +128,14 @@
 				BCAB55FC2DA6BBF400173AC7 /* UIFont.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BCE32B082DA7F11500FFD51C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BCE32B092DA7F11F00FFD51C /* ServiceProtocols.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,7 +215,9 @@
 				BCAB55FF2DA6BFF200173AC7 /* LoginButton.swift in Sources */,
 				BCAB56012DA6C17200173AC7 /* CGFloat.swift in Sources */,
 				BCAB55F92DA6ABD400173AC7 /* AuthTextField.swift in Sources */,
+				BCE32B072DA7EE0B00FFD51C /* AuthService.swift in Sources */,
 				BC021CD52DA6708500F9D5AA /* SceneDelegate.swift in Sources */,
+				BCE32B0A2DA7F12B00FFD51C /* ServiceProtocols.swift in Sources */,
 				BCAB55FD2DA6BBFC00173AC7 /* UIFont.swift in Sources */,
 				BC021CD62DA6708500F9D5AA /* AuthViewController.swift in Sources */,
 			);
