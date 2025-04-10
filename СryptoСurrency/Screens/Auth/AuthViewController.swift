@@ -120,7 +120,9 @@ final class AuthViewController: UIViewController {
            )
            
            alert.addAction(UIAlertAction(title: "Повторить", style: .default))
-           alert.addAction(UIAlertAction(title: "Отменить", style: .destructive) { _ in
+           alert.addAction(UIAlertAction(title: "Отменить", style: .destructive) { [weak self] _ in
+               guard let self else { return }
+               
                self.loginTextField.text = ""
                self.passwordTextField.text = ""
            })
