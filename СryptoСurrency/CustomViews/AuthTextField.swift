@@ -37,7 +37,7 @@ final class AuthTextField: UITextField {
         font = .textField
         layer.cornerRadius = .loginButtonRadius
         layer.masksToBounds = true
-        backgroundColor = .ypWhite.withAlphaComponent(0.8)
+        backgroundColor = .ypWhite
         textColor = .ypBlack
         
         let placeholder: String
@@ -46,13 +46,13 @@ final class AuthTextField: UITextField {
         case .login:
             placeholder = "Username"
             iconView.image = .userIcon
-            tintColor = .ypOrangeSoft
+            tintColor = .ypOrange
             
         case .password:
             placeholder = "Password"
             isSecureTextEntry = true
             iconView.image = .lock
-            tintColor = .ypPurpleSoft
+            tintColor = .ypPurple
         }
         
         attributedPlaceholder = NSAttributedString(
