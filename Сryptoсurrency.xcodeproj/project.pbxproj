@@ -20,6 +20,13 @@
 		BCE32B0A2DA7F12B00FFD51C /* ServiceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B092DA7F11F00FFD51C /* ServiceProtocols.swift */; };
 		BCE32B0D2DA7F19C00FFD51C /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B0C2DA7F19500FFD51C /* AuthViewModel.swift */; };
 		BCE32B0F2DA7F2C800FFD51C /* ViewModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B0E2DA7F2C800FFD51C /* ViewModelProtocols.swift */; };
+		BCE32B112DA8012F00FFD51C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B102DA8012800FFD51C /* TabBarController.swift */; };
+		BCE32B142DA8020100FFD51C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B132DA8020100FFD51C /* ProfileViewController.swift */; };
+		BCE32B162DA8022F00FFD51C /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B152DA8022F00FFD51C /* WalletViewController.swift */; };
+		BCE32B202DA8035F00FFD51C /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B1F2DA8035200FFD51C /* GraphViewController.swift */; };
+		BCE32B222DA8036C00FFD51C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B212DA8036B00FFD51C /* ListViewController.swift */; };
+		BCE32B252DA804DD00FFD51C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B242DA804DD00FFD51C /* HomeViewController.swift */; };
+		BCE32B282DA8122000FFD51C /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B272DA8121700FFD51C /* CustomTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +45,13 @@
 		BCE32B092DA7F11F00FFD51C /* ServiceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProtocols.swift; sourceTree = "<group>"; };
 		BCE32B0C2DA7F19500FFD51C /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		BCE32B0E2DA7F2C800FFD51C /* ViewModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocols.swift; sourceTree = "<group>"; };
+		BCE32B102DA8012800FFD51C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		BCE32B132DA8020100FFD51C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BCE32B152DA8022F00FFD51C /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		BCE32B1F2DA8035200FFD51C /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		BCE32B212DA8036B00FFD51C /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		BCE32B242DA804DD00FFD51C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BCE32B272DA8121700FFD51C /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +101,10 @@
 		BCAB55F42DA6863900173AC7 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				BCE32B262DA8120600FFD51C /* TabBar */,
 				BCAB55F62DA6AB4F00173AC7 /* Auth */,
+				BCE32B232DA804CC00FFD51C /* HomeViewController */,
+				BCE32B122DA801B400FFD51C /* PlugViewControllers */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -150,6 +167,34 @@
 				BCE32B062DA7EE0000FFD51C /* AuthService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		BCE32B122DA801B400FFD51C /* PlugViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BCE32B212DA8036B00FFD51C /* ListViewController.swift */,
+				BCE32B1F2DA8035200FFD51C /* GraphViewController.swift */,
+				BCE32B152DA8022F00FFD51C /* WalletViewController.swift */,
+				BCE32B132DA8020100FFD51C /* ProfileViewController.swift */,
+			);
+			path = PlugViewControllers;
+			sourceTree = "<group>";
+		};
+		BCE32B232DA804CC00FFD51C /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BCE32B242DA804DD00FFD51C /* HomeViewController.swift */,
+			);
+			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		BCE32B262DA8120600FFD51C /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				BCE32B272DA8121700FFD51C /* CustomTabBar.swift */,
+				BCE32B102DA8012800FFD51C /* TabBarController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,16 +270,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCE32B142DA8020100FFD51C /* ProfileViewController.swift in Sources */,
 				BCE32B0D2DA7F19C00FFD51C /* AuthViewModel.swift in Sources */,
 				BC021CD42DA6708500F9D5AA /* AppDelegate.swift in Sources */,
 				BCAB55FF2DA6BFF200173AC7 /* LoginButton.swift in Sources */,
+				BCE32B282DA8122000FFD51C /* CustomTabBar.swift in Sources */,
 				BCAB56012DA6C17200173AC7 /* CGFloat.swift in Sources */,
 				BCAB55F92DA6ABD400173AC7 /* AuthTextField.swift in Sources */,
+				BCE32B202DA8035F00FFD51C /* GraphViewController.swift in Sources */,
 				BCE32B072DA7EE0B00FFD51C /* AuthService.swift in Sources */,
 				BC021CD52DA6708500F9D5AA /* SceneDelegate.swift in Sources */,
 				BCE32B0A2DA7F12B00FFD51C /* ServiceProtocols.swift in Sources */,
 				BCE32B0F2DA7F2C800FFD51C /* ViewModelProtocols.swift in Sources */,
+				BCE32B162DA8022F00FFD51C /* WalletViewController.swift in Sources */,
+				BCE32B112DA8012F00FFD51C /* TabBarController.swift in Sources */,
 				BCAB55FD2DA6BBFC00173AC7 /* UIFont.swift in Sources */,
+				BCE32B222DA8036C00FFD51C /* ListViewController.swift in Sources */,
+				BCE32B252DA804DD00FFD51C /* HomeViewController.swift in Sources */,
 				BC021CD62DA6708500F9D5AA /* AuthViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

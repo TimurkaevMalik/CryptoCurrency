@@ -109,7 +109,12 @@ final class AuthViewController: UIViewController {
     }
     
     private func showTabBarController() {
-        print("showTabBarController")
+        let tabBarController = TabBarController()
+        
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = windowScene.windows.first {
+            window.rootViewController = tabBarController
+        }
     }
     
     private func showErrorAlert(message: String) {
