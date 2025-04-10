@@ -9,6 +9,7 @@ import UIKit
 
 final class AuthViewController: UIViewController {
     
+    private lazy var robotImageView = UIImageView(image: .robot)
     private lazy var loginTextField = AuthTextField(type: .login)
     private lazy var passwordTextField = AuthTextField(type: .password)
 
@@ -23,6 +24,7 @@ final class AuthViewController: UIViewController {
         setupLoginButton()
         setupPasswordTextField()
         setupLoginTextField()
+        setupRobotImage()
     }
     
     private func setupLoginButton() {
@@ -32,7 +34,7 @@ final class AuthViewController: UIViewController {
         NSLayoutConstraint.activate([
             loginButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -133),
             loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
-            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
+            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25)
         ])
     }
     
@@ -43,7 +45,7 @@ final class AuthViewController: UIViewController {
         NSLayoutConstraint.activate([
             passwordTextField.bottomAnchor.constraint(equalTo: loginButton.topAnchor, constant: -25),
             passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
-            passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
+            passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25)
         ])
     }
     
@@ -54,7 +56,19 @@ final class AuthViewController: UIViewController {
         NSLayoutConstraint.activate([
             loginTextField.bottomAnchor.constraint(equalTo: passwordTextField.topAnchor, constant: -15),
             loginTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
-            loginTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
+            loginTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25)
+        ])
+    }
+    
+    private func setupRobotImage() {
+        robotImageView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(robotImageView)
+        
+        NSLayoutConstraint.activate([
+            robotImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 13),
+            robotImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 44),
+            robotImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -44),
+            robotImageView.bottomAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.width)
         ])
     }
     
