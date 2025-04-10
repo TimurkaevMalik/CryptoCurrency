@@ -18,6 +18,8 @@
 		BCAB56012DA6C17200173AC7 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB56002DA6C16D00173AC7 /* CGFloat.swift */; };
 		BCE32B072DA7EE0B00FFD51C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B062DA7EE0000FFD51C /* AuthService.swift */; };
 		BCE32B0A2DA7F12B00FFD51C /* ServiceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B092DA7F11F00FFD51C /* ServiceProtocols.swift */; };
+		BCE32B0D2DA7F19C00FFD51C /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B0C2DA7F19500FFD51C /* AuthViewModel.swift */; };
+		BCE32B0F2DA7F2C800FFD51C /* ViewModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B0E2DA7F2C800FFD51C /* ViewModelProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		BCAB56002DA6C16D00173AC7 /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		BCE32B062DA7EE0000FFD51C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		BCE32B092DA7F11F00FFD51C /* ServiceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProtocols.swift; sourceTree = "<group>"; };
+		BCE32B0C2DA7F19500FFD51C /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		BCE32B0E2DA7F2C800FFD51C /* ViewModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 		BC021CD32DA6708500F9D5AA /* СryptoСurrency */ = {
 			isa = PBXGroup;
 			children = (
+				BCE32B0B2DA7F17500FFD51C /* Services */,
 				BCAB55FA2DA6BBDF00173AC7 /* Helpers */,
 				BCAB55F72DA6ABB500173AC7 /* CustomViews */,
 				BCAB55F52DA6869200173AC7 /* Models */,
@@ -97,7 +102,7 @@
 		BCAB55F62DA6AB4F00173AC7 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				BCE32B062DA7EE0000FFD51C /* AuthService.swift */,
+				BCE32B0C2DA7F19500FFD51C /* AuthViewModel.swift */,
 				BC021CD22DA6708500F9D5AA /* AuthViewController.swift */,
 			);
 			path = Auth;
@@ -134,8 +139,17 @@
 			isa = PBXGroup;
 			children = (
 				BCE32B092DA7F11F00FFD51C /* ServiceProtocols.swift */,
+				BCE32B0E2DA7F2C800FFD51C /* ViewModelProtocols.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BCE32B0B2DA7F17500FFD51C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BCE32B062DA7EE0000FFD51C /* AuthService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCE32B0D2DA7F19C00FFD51C /* AuthViewModel.swift in Sources */,
 				BC021CD42DA6708500F9D5AA /* AppDelegate.swift in Sources */,
 				BCAB55FF2DA6BFF200173AC7 /* LoginButton.swift in Sources */,
 				BCAB56012DA6C17200173AC7 /* CGFloat.swift in Sources */,
@@ -218,6 +233,7 @@
 				BCE32B072DA7EE0B00FFD51C /* AuthService.swift in Sources */,
 				BC021CD52DA6708500F9D5AA /* SceneDelegate.swift in Sources */,
 				BCE32B0A2DA7F12B00FFD51C /* ServiceProtocols.swift in Sources */,
+				BCE32B0F2DA7F2C800FFD51C /* ViewModelProtocols.swift in Sources */,
 				BCAB55FD2DA6BBFC00173AC7 /* UIFont.swift in Sources */,
 				BC021CD62DA6708500F9D5AA /* AuthViewController.swift in Sources */,
 			);
