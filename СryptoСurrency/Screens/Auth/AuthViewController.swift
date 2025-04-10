@@ -9,6 +9,8 @@ import UIKit
 
 final class AuthViewController: UIViewController {
     
+    private var viewModel: AuthViewModelProtocol
+    
     private lazy var robotImageView = UIImageView(image: .robot)
     private lazy var loginTextField = AuthTextField(type: .login)
     private lazy var passwordTextField = AuthTextField(type: .password)
@@ -18,9 +20,35 @@ final class AuthViewController: UIViewController {
         return button
     }()
     
+    init(viewModel: AuthViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .ypWhiteMedium
+        setupUI()
+        bindViewModel()
+    }
+    
+    private func bindViewModel() {
+        viewModel.onAuthSuccess = { [weak self] in
+            guard let self else { return }
+            self.showTabBarController()
+        }
+        
+        viewModel.onAuthFailure = { [weak self] message in
+            guard let self else { return }
+            self.showErrorAlert(message: message)
+        }
+    }
+    
+    private func setupUI() {
         setupLoginButton()
         setupPasswordTextField()
         setupLoginTextField()
@@ -74,6 +102,29 @@ final class AuthViewController: UIViewController {
     }
     
     private func didTapLoginButton() {
-        print("didTapLoginButton")
+        let login = loginTextField.text
+        let password = passwordTextField.text
+
+        viewModel.validateCredentials(login: login, password: password)
     }
+    
+    private func showTabBarController() {
+        print("showTabBarController")
+    }
+    
+    private func showErrorAlert(message: String) {
+           let alert = UIAlertController(
+               title: "Ошибка",
+               message: message,
+               preferredStyle: .alert
+           )
+           
+           alert.addAction(UIAlertAction(title: "Повторить", style: .default))
+           alert.addAction(UIAlertAction(title: "Отменить", style: .destructive) { _ in
+               self.loginTextField.text = ""
+               self.passwordTextField.text = ""
+           })
+           
+           present(alert, animated: true)
+       }
 }

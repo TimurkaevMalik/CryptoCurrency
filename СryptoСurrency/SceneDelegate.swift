@@ -17,7 +17,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = AuthViewController()
+        let authService = AuthService.shared
+        let viewModel = AuthViewModel(authService: authService)
+        window.rootViewController = AuthViewController(viewModel: viewModel)
         self.window = window
         window.makeKeyAndVisible()
     }
