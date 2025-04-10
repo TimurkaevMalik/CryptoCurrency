@@ -27,6 +27,11 @@
 		BCE32B222DA8036C00FFD51C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B212DA8036B00FFD51C /* ListViewController.swift */; };
 		BCE32B252DA804DD00FFD51C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B242DA804DD00FFD51C /* HomeViewController.swift */; };
 		BCE32B282DA8122000FFD51C /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B272DA8121700FFD51C /* CustomTabBar.swift */; };
+		BCE32B2A2DA8308100FFD51C /* CryptoDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B292DA8305800FFD51C /* CryptoDataResponse.swift */; };
+		BCE32B2D2DA8370300FFD51C /* CryptoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B2C2DA8370300FFD51C /* CryptoData.swift */; };
+		BCE32B2F2DA8371E00FFD51C /* MarketData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B2E2DA8371E00FFD51C /* MarketData.swift */; };
+		BCE32B312DA8372D00FFD51C /* Marketcap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B302DA8372D00FFD51C /* Marketcap.swift */; };
+		BCE32B332DA8373A00FFD51C /* Supply.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B322DA8373A00FFD51C /* Supply.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +57,11 @@
 		BCE32B212DA8036B00FFD51C /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		BCE32B242DA804DD00FFD51C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BCE32B272DA8121700FFD51C /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		BCE32B292DA8305800FFD51C /* CryptoDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDataResponse.swift; sourceTree = "<group>"; };
+		BCE32B2C2DA8370300FFD51C /* CryptoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoData.swift; sourceTree = "<group>"; };
+		BCE32B2E2DA8371E00FFD51C /* MarketData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketData.swift; sourceTree = "<group>"; };
+		BCE32B302DA8372D00FFD51C /* Marketcap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marketcap.swift; sourceTree = "<group>"; };
+		BCE32B322DA8373A00FFD51C /* Supply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supply.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +122,7 @@
 		BCAB55F52DA6869200173AC7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BCE32B2B2DA836D100FFD51C /* Crypt */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -197,6 +208,18 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		BCE32B2B2DA836D100FFD51C /* Crypt */ = {
+			isa = PBXGroup;
+			children = (
+				BCE32B322DA8373A00FFD51C /* Supply.swift */,
+				BCE32B302DA8372D00FFD51C /* Marketcap.swift */,
+				BCE32B2E2DA8371E00FFD51C /* MarketData.swift */,
+				BCE32B2C2DA8370300FFD51C /* CryptoData.swift */,
+				BCE32B292DA8305800FFD51C /* CryptoDataResponse.swift */,
+			);
+			path = Crypt;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -275,14 +298,19 @@
 				BC021CD42DA6708500F9D5AA /* AppDelegate.swift in Sources */,
 				BCAB55FF2DA6BFF200173AC7 /* LoginButton.swift in Sources */,
 				BCE32B282DA8122000FFD51C /* CustomTabBar.swift in Sources */,
+				BCE32B2F2DA8371E00FFD51C /* MarketData.swift in Sources */,
+				BCE32B332DA8373A00FFD51C /* Supply.swift in Sources */,
 				BCAB56012DA6C17200173AC7 /* CGFloat.swift in Sources */,
 				BCAB55F92DA6ABD400173AC7 /* AuthTextField.swift in Sources */,
+				BCE32B312DA8372D00FFD51C /* Marketcap.swift in Sources */,
 				BCE32B202DA8035F00FFD51C /* GraphViewController.swift in Sources */,
 				BCE32B072DA7EE0B00FFD51C /* AuthService.swift in Sources */,
+				BCE32B2A2DA8308100FFD51C /* CryptoDataResponse.swift in Sources */,
 				BC021CD52DA6708500F9D5AA /* SceneDelegate.swift in Sources */,
 				BCE32B0A2DA7F12B00FFD51C /* ServiceProtocols.swift in Sources */,
 				BCE32B0F2DA7F2C800FFD51C /* ViewModelProtocols.swift in Sources */,
 				BCE32B162DA8022F00FFD51C /* WalletViewController.swift in Sources */,
+				BCE32B2D2DA8370300FFD51C /* CryptoData.swift in Sources */,
 				BCE32B112DA8012F00FFD51C /* TabBarController.swift in Sources */,
 				BCAB55FD2DA6BBFC00173AC7 /* UIFont.swift in Sources */,
 				BCE32B222DA8036C00FFD51C /* ListViewController.swift in Sources */,
