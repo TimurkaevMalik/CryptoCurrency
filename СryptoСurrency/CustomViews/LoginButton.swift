@@ -9,8 +9,11 @@ import UIKit
 
 final class LoginButton: UIButton {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    let action: () -> Void
+    
+    init(action: @escaping () -> Void) {
+        self.action = action
+        super.init(frame: .zero)
         configure()
     }
     
@@ -25,9 +28,16 @@ final class LoginButton: UIButton {
         setTitle("Login", for: .normal)
         titleLabel?.font = .loginButton
         
-        layer.cornerRadius = 40
+        layer.cornerRadius = .loginButtonRadius
         layer.masksToBounds = true
         
         heightAnchor.constraint(equalToConstant: .loginButtonHeight).isActive = true
+        
+        addAction(
+            UIAction { [weak self] _ in
+                guard let self else { return }
+                self.action()
+            },
+            for: .touchUpInside)
     }
 }

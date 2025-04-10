@@ -35,7 +35,7 @@ final class AuthTextField: UITextField {
     private func configureTextField() {
         heightAnchor.constraint(equalToConstant: .loginButtonHeight).isActive = true
         font = .textField
-        layer.cornerRadius = 25
+        layer.cornerRadius = .loginButtonRadius
         layer.masksToBounds = true
         backgroundColor = .ypWhite.withAlphaComponent(0.8)
         textColor = .ypBlack
