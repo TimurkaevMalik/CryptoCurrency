@@ -17,9 +17,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        let authService = AuthService.shared
-        let viewModel = AuthViewModel(authService: authService)
-        window.rootViewController = TabBarController()
+        
+        if AuthService.shared.isAuthenticated {
+            window.rootViewController = TabBarController()
+        } else {
+            let authService = AuthService.shared
+            let viewModel = AuthViewModel(authService: authService)
+            window.rootViewController = AuthViewController(viewModel: viewModel)
+        }
+        
         self.window = window
         window.makeKeyAndVisible()
     }
