@@ -33,6 +33,7 @@ final class AuthTextField: UITextField {
     }
     
     private func configureTextField() {
+        translatesAutoresizingMaskIntoConstraints = false
         heightAnchor.constraint(equalToConstant: .loginButtonHeight).isActive = true
         font = .textField
         layer.cornerRadius = .loginButtonRadius

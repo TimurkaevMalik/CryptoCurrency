@@ -22,6 +22,7 @@ final class LoginButton: UIButton {
     }
     
     private func configure() {
+        translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .ypBlackEclipse
         
         setTitleColor(.ypWhite, for: .normal)

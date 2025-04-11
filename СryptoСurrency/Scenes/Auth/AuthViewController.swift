@@ -56,7 +56,6 @@ final class AuthViewController: UIViewController {
     }
     
     private func setupLoginButton() {
-        loginButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(loginButton)
         
         NSLayoutConstraint.activate([
@@ -67,7 +66,6 @@ final class AuthViewController: UIViewController {
     }
     
     private func setupPasswordTextField() {
-        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(passwordTextField)
         
         NSLayoutConstraint.activate([
@@ -78,7 +76,6 @@ final class AuthViewController: UIViewController {
     }
     
     private func setupLoginTextField() {
-        loginTextField.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(loginTextField)
         
         NSLayoutConstraint.activate([

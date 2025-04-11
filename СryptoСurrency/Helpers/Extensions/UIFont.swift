@@ -8,6 +8,10 @@
 import UIKit
 
 extension UIFont {
+    static var learnMoreButton: UIFont {
+        UIFont.systemFont(ofSize: 14, weight: .semibold)
+    }
+    
     static var textField: UIFont {
         UIFont.systemFont(ofSize: 15, weight: .regular)
     }

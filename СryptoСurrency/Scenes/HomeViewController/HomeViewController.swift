@@ -11,6 +11,7 @@ final class HomeViewController: UIViewController {
     
     private lazy var titleLabel = UILabel()
     private lazy var affiliateProgramLabel = UILabel()
+    private lazy var learnMoreButton = RoundedButton(title: "Learn more")
     
     private lazy var trendContainer = UIView()
     private lazy var cubeImageView = UIImageView()
@@ -29,6 +30,7 @@ final class HomeViewController: UIViewController {
         setupTrendContainer()
         setupCubeImageView()
         setupAffiliateProgramLabel()
+        setupLearnMoreButton()
         
         setViewsPositionZ()
     }
@@ -68,12 +70,21 @@ final class HomeViewController: UIViewController {
     }
     
     private func setupMenuButton() {
-        menuButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(menuButton)
         
         NSLayoutConstraint.activate([
             menuButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -.defaultMargin),
             menuButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor)
+        ])
+    }
+    
+    private func setupLearnMoreButton() {
+        view.addSubview(learnMoreButton)
+        
+        NSLayoutConstraint.activate([
+            learnMoreButton.topAnchor.constraint(equalTo: affiliateProgramLabel.bottomAnchor, constant: 12),
+            learnMoreButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .defaultMargin),
+            learnMoreButton.heightAnchor.constraint(equalToConstant: 35)
         ])
     }
     

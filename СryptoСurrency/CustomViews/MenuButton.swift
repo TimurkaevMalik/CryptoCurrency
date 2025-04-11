@@ -30,6 +30,8 @@ final class MenuButton: UIButton {
         let anchorView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 60))
         addSubview(anchorView)
         
+        translatesAutoresizingMaskIntoConstraints = false
+        
         menu = UIMenu(children: actions)
         showsMenuAsPrimaryAction = true
         
