@@ -23,6 +23,7 @@
 		BCBC9F432DA8E72D00149241 /* ErrorNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC9F422DA8E72D00149241 /* ErrorNetworkClient.swift */; };
 		BCBC9F472DA8EDEC00149241 /* RequestHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC9F462DA8EDEC00149241 /* RequestHeaders.swift */; };
 		BCBC9F492DA8F5D200149241 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC9F482DA8F5D200149241 /* HttpMethod.swift */; };
+		BCBC9F4B2DA90E4500149241 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC9F4A2DA90E3E00149241 /* MenuButton.swift */; };
 		BCE32B072DA7EE0B00FFD51C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B062DA7EE0000FFD51C /* AuthService.swift */; };
 		BCE32B0A2DA7F12B00FFD51C /* ServiceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B092DA7F11F00FFD51C /* ServiceProtocols.swift */; };
 		BCE32B0D2DA7F19C00FFD51C /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B0C2DA7F19500FFD51C /* AuthViewModel.swift */; };
@@ -60,6 +61,7 @@
 		BCBC9F422DA8E72D00149241 /* ErrorNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorNetworkClient.swift; sourceTree = "<group>"; };
 		BCBC9F462DA8EDEC00149241 /* RequestHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHeaders.swift; sourceTree = "<group>"; };
 		BCBC9F482DA8F5D200149241 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		BCBC9F4A2DA90E3E00149241 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		BCE32B062DA7EE0000FFD51C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		BCE32B092DA7F11F00FFD51C /* ServiceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProtocols.swift; sourceTree = "<group>"; };
 		BCE32B0C2DA7F19500FFD51C /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 		BCAB55F72DA6ABB500173AC7 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				BCBC9F4A2DA90E3E00149241 /* MenuButton.swift */,
 				BCAB55FE2DA6BFE700173AC7 /* LoginButton.swift */,
 				BCAB55F82DA6ABC900173AC7 /* AuthTextField.swift */,
 			);
@@ -342,6 +345,7 @@
 				BCE32B0A2DA7F12B00FFD51C /* ServiceProtocols.swift in Sources */,
 				BCE32B0F2DA7F2C800FFD51C /* ViewModelProtocols.swift in Sources */,
 				BCE32B162DA8022F00FFD51C /* WalletViewController.swift in Sources */,
+				BCBC9F4B2DA90E4500149241 /* MenuButton.swift in Sources */,
 				BCBC9F402DA8E1BF00149241 /* CryptoService.swift in Sources */,
 				BCE32B2D2DA8370300FFD51C /* CryptoData.swift in Sources */,
 				BCBC9F492DA8F5D200149241 /* HttpMethod.swift in Sources */,
