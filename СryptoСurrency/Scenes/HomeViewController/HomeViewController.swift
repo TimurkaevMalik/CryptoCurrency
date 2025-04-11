@@ -11,6 +11,7 @@ final class HomeViewController: UIViewController {
     
     private lazy var titleView = UILabel()
     private lazy var trendContainer = UIView()
+    private lazy var cubeImageView = UIImageView()
     
     private lazy var menuButton: MenuButton = {
         MenuButton(actions: getMenuButtonActions())
@@ -24,6 +25,13 @@ final class HomeViewController: UIViewController {
         setupTitleView()
         setupMenuButton()
         setupTrendContainer()
+        setupCubeImageView()
+        
+        setViewsPositionZ()
+    }
+    
+    private func setViewsPositionZ() {
+        view.sendSubviewToBack(cubeImageView)
     }
     
     private func setupTitleView() {
@@ -66,7 +74,19 @@ final class HomeViewController: UIViewController {
             trendContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 258),
             trendContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             trendContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            trendContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            trendContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+    }
+    
+    private func setupCubeImageView() {
+        cubeImageView.image = .cube
+        view.addSubview(cubeImageView)
+        cubeImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            cubeImageView.topAnchor.constraint(equalTo: trendContainer.topAnchor, constant: -157),
+            cubeImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            cubeImageView.heightAnchor.constraint(equalToConstant: 242),
         ])
     }
 }
