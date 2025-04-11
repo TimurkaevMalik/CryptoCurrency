@@ -18,7 +18,10 @@ final class HomeViewController: UIViewController {
     private lazy var cubeImageView = UIImageView()
     
     private lazy var menuButton: MenuButton = {
-        MenuButton(actions: getMenuButtonActions())
+        MenuButton(actions: menuButtonActions)
+    }()
+    private lazy var sortingButton: MenuButton = {
+        MenuButton(actions: filterButtonActions)
     }()
     
     override func viewDidLoad() {
@@ -33,6 +36,7 @@ final class HomeViewController: UIViewController {
         setupAffiliateProgramLabel()
         setupLearnMoreButton()
         setupTrendingLabel()
+        setupFilterButton()
         
         setViewsPositionZ()
     }
@@ -95,6 +99,23 @@ final class HomeViewController: UIViewController {
         ])
     }
     
+    private func setupFilterButton() {
+        sortingButton.backgroundColor = .clear
+        sortingButton.setImage(.sort, for: .normal)
+        sortingButton.layer.masksToBounds = false
+        
+        view.addSubview(sortingButton)
+        
+        let size: CGFloat = 24
+        
+        NSLayoutConstraint.activate([
+            sortingButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -.defaultMargin),
+            sortingButton.centerYAnchor.constraint(equalTo: trendingLabel.centerYAnchor),
+            sortingButton.heightAnchor.constraint(equalToConstant: size),
+            sortingButton.widthAnchor.constraint(equalToConstant: size)
+        ])
+    }
+    
     private func setupLearnMoreButton() {
         view.addSubview(learnMoreButton)
         
@@ -137,7 +158,7 @@ final class HomeViewController: UIViewController {
 }
 
 private extension HomeViewController {
-    func getMenuButtonActions() -> [UIAction] {
+    var menuButtonActions: [UIAction] {
         let logoutAction = UIAction(title: "Выйти", image: .bin) { [weak self] _ in
             guard let self else { return }
             
@@ -150,6 +171,18 @@ private extension HomeViewController {
         }
         
         return [logoutAction, updateAction]
+    }
+    
+    var filterButtonActions: [UIAction] {
+        let ascendingAction = UIAction(title: "По возрастинию", image: .chevronUp) { _ in
+            print("По возрастинию")
+        }
+        
+        let descendingAction = UIAction(title: "По убыванию", image: .chevronDown) { _ in
+            print("По убыванию")
+        }
+        
+        return [ascendingAction, descendingAction]
     }
     
     func showAuthViewController() {
