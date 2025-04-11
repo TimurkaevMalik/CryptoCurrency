@@ -20,6 +20,14 @@ extension UIFont {
         UIFont.systemFont(ofSize: 15, weight: .semibold)
     }
     
+    static var currencySymbol: UIFont {
+        UIFont.systemFont(ofSize: 14, weight: .medium)
+    }
+    
+    static var currencyName: UIFont {
+        UIFont.systemFont(ofSize: 18, weight: .medium)
+    }
+    
     static var affiliateProgram: UIFont {
         UIFont.systemFont(ofSize: 20, weight: .medium)
     }
