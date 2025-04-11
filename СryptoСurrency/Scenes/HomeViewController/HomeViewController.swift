@@ -10,6 +10,7 @@ import UIKit
 final class HomeViewController: UIViewController {
     
     private lazy var titleView = UILabel()
+    private lazy var trendContainer = UIView()
     
     private lazy var menuButton: MenuButton = {
         MenuButton(actions: getMenuButtonActions())
@@ -22,6 +23,7 @@ final class HomeViewController: UIViewController {
         
         setupTitleView()
         setupMenuButton()
+        setupTrendContainer()
     }
     
     private func setupTitleView() {
@@ -50,7 +52,27 @@ final class HomeViewController: UIViewController {
         ])
     }
     
-    private func getMenuButtonActions() -> [UIAction] {
+    private func setupTrendContainer() {
+        trendContainer.backgroundColor = .ypWhiteGhost
+        
+        trendContainer.layer.cornerRadius = 40
+        trendContainer.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        trendContainer.layer.masksToBounds = true
+        
+        view.addSubview(trendContainer)
+        trendContainer.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            trendContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 258),
+            trendContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            trendContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            trendContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+        ])
+    }
+}
+
+private extension HomeViewController {
+    func getMenuButtonActions() -> [UIAction] {
         let logoutAction = UIAction(title: "Выйти", image: .bin) { _ in
             AuthService.shared.logout()
         }

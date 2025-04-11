@@ -100,15 +100,17 @@ final class AuthViewController: UIViewController {
             robotImageView.bottomAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.width)
         ])
     }
-    
-    private func didTapLoginButton() {
+}
+
+private extension AuthViewController {
+    func didTapLoginButton() {
         let login = loginTextField.text
         let password = passwordTextField.text
 
         viewModel.validateCredentials(login: login, password: password)
     }
     
-    private func showTabBarController() {
+    func showTabBarController() {
         let tabBarController = TabBarController()
         
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
@@ -117,7 +119,7 @@ final class AuthViewController: UIViewController {
         }
     }
     
-    private func showErrorAlert(message: String) {
+    func showErrorAlert(message: String) {
            let alert = UIAlertController(
                title: "Ошибка",
                message: message,
