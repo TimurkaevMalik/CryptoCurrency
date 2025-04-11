@@ -21,8 +21,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if AuthService.shared.isAuthenticated {
             window.rootViewController = TabBarController()
         } else {
-            let authService = AuthService.shared
-            let viewModel = AuthViewModel(authService: authService)
+            
+            let viewModel = AuthViewModel(authService: AuthService.shared)
             window.rootViewController = AuthViewController(viewModel: viewModel)
         }
         

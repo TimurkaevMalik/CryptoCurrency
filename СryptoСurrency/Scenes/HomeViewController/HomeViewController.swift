@@ -93,8 +93,11 @@ final class HomeViewController: UIViewController {
 
 private extension HomeViewController {
     func getMenuButtonActions() -> [UIAction] {
-        let logoutAction = UIAction(title: "Выйти", image: .bin) { _ in
+        let logoutAction = UIAction(title: "Выйти", image: .bin) { [weak self] _ in
+            guard let self else { return }
+            
             AuthService.shared.logout()
+            self.showAuthViewController()
         }
         
         let updateAction = UIAction(title: "Обновить", image: .rocket) { _ in
@@ -102,5 +105,14 @@ private extension HomeViewController {
         }
         
         return [logoutAction, updateAction]
+    }
+    
+    func showAuthViewController() {
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = windowScene.windows.first {
+            
+            let viewModel = AuthViewModel(authService: AuthService.shared)
+            window.rootViewController = AuthViewController(viewModel: viewModel)
+        }
     }
 }
