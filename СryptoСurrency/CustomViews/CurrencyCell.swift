@@ -8,25 +8,28 @@
 import UIKit
 
 final class CurrencyCell: UITableViewCell {
+    static let identifier = "CurrencyCell"
+//    let data: CryptoData
     
     private let iconImageView = UIImageView()
     private let nameLabel = UILabel()
     private let symbolLabel = UILabel()
     private let priceLabel = UILabel()
     private let percentChangeLabel = UILabel()
-
-    private let data: CryptoData
-    
-    init(data: CryptoData,
-         image: UIImage) {
-        
-        self.data = data
-        iconImageView.image = image
-        super.init(frame: .zero)
-        
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
     }
-    
+//    init(data: CryptoData,
+//         image: UIImage) {
+//        
+//        self.data = data
+//        iconImageView.image = image
+//        super.init(frame: .zero)
+//        
+//        setupUI()
+//    }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -38,6 +41,16 @@ final class CurrencyCell: UITableViewCell {
         setupSymbolLabel()
         setupPriceLabel()
         setupPercentChangeLabel()
+    }
+    
+    func configureWith(_ data: CryptoData,
+                               image: UIImage) {
+        
+        iconImageView.image = image
+        nameLabel.text = data.name
+        symbolLabel.text = data.symbol
+        priceLabel.text = "\(data.marketData.priceUSD)"
+        percentChangeLabel.text = "\(data.marketData.percentChangeUSDLast24Hours)"
     }
     
     private func setAutoresizingMask() {
@@ -59,7 +72,7 @@ final class CurrencyCell: UITableViewCell {
     }
     
     private func setupNameLabel() {
-        nameLabel.text = data.name
+//        nameLabel.text = data.name
         nameLabel.font = .currencyName
         nameLabel.textColor = .ypBlack
         
@@ -73,7 +86,7 @@ final class CurrencyCell: UITableViewCell {
     }
     
     private func setupSymbolLabel() {
-        symbolLabel.text = data.symbol
+//        symbolLabel.text = data.symbol
         symbolLabel.font = .currencySymbol
         symbolLabel.textColor = .ypGray
         
@@ -87,7 +100,7 @@ final class CurrencyCell: UITableViewCell {
     }
     
     private func setupPriceLabel() {
-        priceLabel.text = data.name
+//        priceLabel.text = data.name
         priceLabel.font = .currencyName
         priceLabel.textColor = .ypBlack
         
@@ -102,7 +115,7 @@ final class CurrencyCell: UITableViewCell {
     
     ///TODO: add image
     private func setupPercentChangeLabel() {
-        percentChangeLabel.text = data.symbol
+//        percentChangeLabel.text = data.symbol
         percentChangeLabel.font = .currencySymbol
         percentChangeLabel.textColor = .ypGray
         

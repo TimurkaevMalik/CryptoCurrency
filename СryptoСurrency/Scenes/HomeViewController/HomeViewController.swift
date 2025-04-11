@@ -20,8 +20,19 @@ final class HomeViewController: UIViewController {
     private lazy var menuButton: MenuButton = {
         MenuButton(actions: menuButtonActions)
     }()
+    
     private lazy var sortingButton: MenuButton = {
         MenuButton(actions: filterButtonActions)
+    }()
+    
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(CurrencyCell.self,
+                           forCellReuseIdentifier: CurrencyCell.identifier)
+        
+        return tableView
     }()
     
     override func viewDidLoad() {
@@ -37,6 +48,7 @@ final class HomeViewController: UIViewController {
         setupLearnMoreButton()
         setupTrendingLabel()
         setupFilterButton()
+        setupTableView()
         
         setViewsPositionZ()
     }
@@ -155,6 +167,20 @@ final class HomeViewController: UIViewController {
             cubeImageView.heightAnchor.constraint(equalToConstant: 242),
         ])
     }
+    
+    private func setupTableView() {
+        view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        tableView.separatorInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: trendContainer.topAnchor, constant: 70),
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .defaultMargin),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -.defaultMargin)
+        ])
+    }
 }
 
 private extension HomeViewController {
@@ -192,5 +218,29 @@ private extension HomeViewController {
             let viewModel = AuthViewModel(authService: AuthService.shared)
             window.rootViewController = AuthViewController(viewModel: viewModel)
         }
+    }
+}
+
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: CurrencyCell.identifier,
+            for: indexPath) as? CurrencyCell else {
+            return UITableViewCell()
+        }
+        
+        return cell
+    }
+}
+
+extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
     }
 }
