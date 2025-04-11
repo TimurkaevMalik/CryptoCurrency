@@ -9,7 +9,7 @@ import UIKit
 
 final class WalletViewController: UIViewController {
     
-    private lazy var titleView = UILabel()
+    private lazy var titleLabel = UILabel()
     private lazy var trendContainer = UIView()
     private lazy var cubeImageView = UIImageView()
     
@@ -18,7 +18,7 @@ final class WalletViewController: UIViewController {
         view.backgroundColor = .ypPink
         navigationController?.setNavigationBarHidden(true, animated: false)
         
-        setupTitleView()
+        setupTitleLabel()
         setupTrendContainer()
         setupCubeImageView()
         
@@ -29,19 +29,19 @@ final class WalletViewController: UIViewController {
         view.sendSubviewToBack(cubeImageView)
     }
     
-    private func setupTitleView() {
-        titleView.text = "Wallet"
-        titleView.font = .title
-        titleView.textColor = .ypWhite
+    private func setupTitleLabel() {
+        titleLabel.text = "Wallet"
+        titleLabel.font = .title
+        titleLabel.textColor = .ypWhite
         
-        titleView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(titleView)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(titleLabel)
         
         
         NSLayoutConstraint.activate([
-            titleView.heightAnchor.constraint(equalToConstant: 48),
-            titleView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .defaultMargin),
-            titleView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32)
+            titleLabel.heightAnchor.constraint(equalToConstant: 48),
+            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .defaultMargin),
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32)
         ])
     }
     

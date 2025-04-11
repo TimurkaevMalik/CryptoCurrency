@@ -9,7 +9,9 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     
-    private lazy var titleView = UILabel()
+    private lazy var titleLabel = UILabel()
+    private lazy var affiliateProgramLabel = UILabel()
+    
     private lazy var trendContainer = UIView()
     private lazy var cubeImageView = UIImageView()
     
@@ -22,10 +24,11 @@ final class HomeViewController: UIViewController {
         view.backgroundColor = .ypPink
         navigationController?.setNavigationBarHidden(true, animated: false)
         
-        setupTitleView()
+        setupTitleLabel()
         setupMenuButton()
         setupTrendContainer()
         setupCubeImageView()
+        setupAffiliateProgramLabel()
         
         setViewsPositionZ()
     }
@@ -34,19 +37,33 @@ final class HomeViewController: UIViewController {
         view.sendSubviewToBack(cubeImageView)
     }
     
-    private func setupTitleView() {
-        titleView.text = "Home"
-        titleView.font = .title
-        titleView.textColor = .ypWhite
+    private func setupTitleLabel() {
+        titleLabel.text = "Home"
+        titleLabel.font = .title
+        titleLabel.textColor = .ypWhite
         
-        titleView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(titleView)
-        
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
-            titleView.heightAnchor.constraint(equalToConstant: 48),
-            titleView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .defaultMargin),
-            titleView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32)
+            titleLabel.heightAnchor.constraint(equalToConstant: 48),
+            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .defaultMargin),
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32)
+        ])
+    }
+    
+    private func setupAffiliateProgramLabel() {
+        affiliateProgramLabel.text = "Affiliate program"
+        affiliateProgramLabel.font = .affiliateProgram
+        affiliateProgramLabel.textColor = .ypWhite
+        
+        affiliateProgramLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(affiliateProgramLabel)
+        
+        NSLayoutConstraint.activate([
+            affiliateProgramLabel.topAnchor.constraint(equalTo: cubeImageView.topAnchor, constant: 25),
+            affiliateProgramLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .defaultMargin),
+            affiliateProgramLabel.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
     
@@ -56,7 +73,7 @@ final class HomeViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             menuButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -.defaultMargin),
-            menuButton.centerYAnchor.constraint(equalTo: titleView.centerYAnchor)
+            menuButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor)
         ])
     }
     
