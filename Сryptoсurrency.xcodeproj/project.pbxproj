@@ -19,6 +19,10 @@
 		BCAB55FD2DA6BBFC00173AC7 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB55FC2DA6BBF400173AC7 /* UIFont.swift */; };
 		BCAB55FF2DA6BFF200173AC7 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB55FE2DA6BFE700173AC7 /* LoginButton.swift */; };
 		BCAB56012DA6C17200173AC7 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB56002DA6C16D00173AC7 /* CGFloat.swift */; };
+		BCBC9F402DA8E1BF00149241 /* CryptoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC9F3F2DA8E1BF00149241 /* CryptoService.swift */; };
+		BCBC9F432DA8E72D00149241 /* ErrorNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC9F422DA8E72D00149241 /* ErrorNetworkClient.swift */; };
+		BCBC9F472DA8EDEC00149241 /* RequestHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC9F462DA8EDEC00149241 /* RequestHeaders.swift */; };
+		BCBC9F492DA8F5D200149241 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC9F482DA8F5D200149241 /* HttpMethod.swift */; };
 		BCE32B072DA7EE0B00FFD51C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B062DA7EE0000FFD51C /* AuthService.swift */; };
 		BCE32B0A2DA7F12B00FFD51C /* ServiceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B092DA7F11F00FFD51C /* ServiceProtocols.swift */; };
 		BCE32B0D2DA7F19C00FFD51C /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B0C2DA7F19500FFD51C /* AuthViewModel.swift */; };
@@ -52,6 +56,10 @@
 		BCAB55FC2DA6BBF400173AC7 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		BCAB55FE2DA6BFE700173AC7 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		BCAB56002DA6C16D00173AC7 /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
+		BCBC9F3F2DA8E1BF00149241 /* CryptoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoService.swift; sourceTree = "<group>"; };
+		BCBC9F422DA8E72D00149241 /* ErrorNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorNetworkClient.swift; sourceTree = "<group>"; };
+		BCBC9F462DA8EDEC00149241 /* RequestHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHeaders.swift; sourceTree = "<group>"; };
+		BCBC9F482DA8F5D200149241 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		BCE32B062DA7EE0000FFD51C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		BCE32B092DA7F11F00FFD51C /* ServiceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProtocols.swift; sourceTree = "<group>"; };
 		BCE32B0C2DA7F19500FFD51C /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
@@ -118,8 +126,11 @@
 			isa = PBXGroup;
 			children = (
 				BC823C4E2DA8E12D00E6A09D /* Endpoint.swift */,
+				BCBC9F482DA8F5D200149241 /* HttpMethod.swift */,
 				BC823C4C2DA8DC7100E6A09D /* CryptoSymbol .swift */,
+				BCBC9F462DA8EDEC00149241 /* RequestHeaders.swift */,
 				BC823C4A2DA8D37900E6A09D /* RequestConstants.swift */,
+				BCBC9F422DA8E72D00149241 /* ErrorNetworkClient.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -191,8 +202,9 @@
 		BCE32B0B2DA7F17500FFD51C /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				BC823C492DA8D36700E6A09D /* Requests */,
+				BCBC9F3F2DA8E1BF00149241 /* CryptoService.swift */,
 				BCE32B062DA7EE0000FFD51C /* AuthService.swift */,
+				BC823C492DA8D36700E6A09D /* Requests */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -320,6 +332,7 @@
 				BCE32B332DA8373A00FFD51C /* Supply.swift in Sources */,
 				BC823C4D2DA8DC9100E6A09D /* CryptoSymbol .swift in Sources */,
 				BCAB56012DA6C17200173AC7 /* CGFloat.swift in Sources */,
+				BCBC9F432DA8E72D00149241 /* ErrorNetworkClient.swift in Sources */,
 				BCAB55F92DA6ABD400173AC7 /* AuthTextField.swift in Sources */,
 				BCE32B312DA8372D00FFD51C /* Marketcap.swift in Sources */,
 				BCE32B202DA8035F00FFD51C /* GraphViewController.swift in Sources */,
@@ -329,8 +342,11 @@
 				BCE32B0A2DA7F12B00FFD51C /* ServiceProtocols.swift in Sources */,
 				BCE32B0F2DA7F2C800FFD51C /* ViewModelProtocols.swift in Sources */,
 				BCE32B162DA8022F00FFD51C /* WalletViewController.swift in Sources */,
+				BCBC9F402DA8E1BF00149241 /* CryptoService.swift in Sources */,
 				BCE32B2D2DA8370300FFD51C /* CryptoData.swift in Sources */,
+				BCBC9F492DA8F5D200149241 /* HttpMethod.swift in Sources */,
 				BC823C4B2DA8D38100E6A09D /* RequestConstants.swift in Sources */,
+				BCBC9F472DA8EDEC00149241 /* RequestHeaders.swift in Sources */,
 				BCE32B112DA8012F00FFD51C /* TabBarController.swift in Sources */,
 				BCAB55FD2DA6BBFC00173AC7 /* UIFont.swift in Sources */,
 				BCE32B222DA8036C00FFD51C /* ListViewController.swift in Sources */,

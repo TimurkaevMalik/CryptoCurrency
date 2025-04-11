@@ -12,3 +12,10 @@ protocol AuthServiceProtocol {
     func authenticate(login: String, password: String) -> Bool
     func logout()
 }
+
+protocol CryptoServiceProtocol {
+    typealias CryptoResponse = Result<CryptoData, ErrorNetworkClient>
+    
+    func fetchCrypt(_ symbol: CryptoSymbol,
+                    completion: @escaping (CryptoResponse) -> Void)
+}
