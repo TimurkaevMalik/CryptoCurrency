@@ -26,6 +26,7 @@
 		BCBC9F4B2DA90E4500149241 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC9F4A2DA90E3E00149241 /* MenuButton.swift */; };
 		BCBC9F512DA946EB00149241 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC9F502DA946E900149241 /* RoundedButton.swift */; };
 		BCBC9F542DA9546800149241 /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC9F532DA9543F00149241 /* CurrencyCell.swift */; };
+		BCBC9F562DA963D000149241 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBC9F552DA963C800149241 /* HomeViewModel.swift */; };
 		BCE32B072DA7EE0B00FFD51C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B062DA7EE0000FFD51C /* AuthService.swift */; };
 		BCE32B0A2DA7F12B00FFD51C /* ServiceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B092DA7F11F00FFD51C /* ServiceProtocols.swift */; };
 		BCE32B0D2DA7F19C00FFD51C /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE32B0C2DA7F19500FFD51C /* AuthViewModel.swift */; };
@@ -66,6 +67,7 @@
 		BCBC9F4A2DA90E3E00149241 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		BCBC9F502DA946E900149241 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		BCBC9F532DA9543F00149241 /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
+		BCBC9F552DA963C800149241 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		BCE32B062DA7EE0000FFD51C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		BCE32B092DA7F11F00FFD51C /* ServiceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProtocols.swift; sourceTree = "<group>"; };
 		BCE32B0C2DA7F19500FFD51C /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		BCAB55F72DA6ABB500173AC7 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				BCBC9F532DA9543F00149241 /* CurrencyCell.swift */,
 				BCBC9F502DA946E900149241 /* RoundedButton.swift */,
 				BCBC9F4A2DA90E3E00149241 /* MenuButton.swift */,
 				BCAB55FE2DA6BFE700173AC7 /* LoginButton.swift */,
@@ -196,14 +199,6 @@
 				BCAB55FC2DA6BBF400173AC7 /* UIFont.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		BCBC9F522DA9541A00149241 /* TrendTableView */ = {
-			isa = PBXGroup;
-			children = (
-				BCBC9F532DA9543F00149241 /* CurrencyCell.swift */,
-			);
-			path = TrendTableView;
 			sourceTree = "<group>";
 		};
 		BCE32B082DA7F11500FFD51C /* Protocols */ = {
@@ -239,7 +234,7 @@
 		BCE32B232DA804CC00FFD51C /* HomeViewController */ = {
 			isa = PBXGroup;
 			children = (
-				BCBC9F522DA9541A00149241 /* TrendTableView */,
+				BCBC9F552DA963C800149241 /* HomeViewModel.swift */,
 				BCE32B242DA804DD00FFD51C /* HomeViewController.swift */,
 			);
 			path = HomeViewController;
@@ -356,6 +351,7 @@
 				BCE32B202DA8035F00FFD51C /* GraphViewController.swift in Sources */,
 				BCE32B072DA7EE0B00FFD51C /* AuthService.swift in Sources */,
 				BCE32B2A2DA8308100FFD51C /* CryptoDataResponse.swift in Sources */,
+				BCBC9F562DA963D000149241 /* HomeViewModel.swift in Sources */,
 				BC021CD52DA6708500F9D5AA /* SceneDelegate.swift in Sources */,
 				BCBC9F512DA946EB00149241 /* RoundedButton.swift in Sources */,
 				BCE32B0A2DA7F12B00FFD51C /* ServiceProtocols.swift in Sources */,

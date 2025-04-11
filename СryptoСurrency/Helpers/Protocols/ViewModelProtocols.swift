@@ -12,3 +12,10 @@ protocol AuthViewModelProtocol {
     var onAuthFailure: ((String) -> Void)? { get set }
     func validateCredentials(login: String?, password: String?)
 }
+
+protocol HomeViewModelProtocol {
+    ///TODO: do I need optional?
+    var onFetchSuccess: ((CryptoData) -> Void)? { get set }
+    var onFetchFailure: ((ErrorNetworkClient) -> Void)? { get set }
+    func fetchCrypts()
+}
