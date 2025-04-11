@@ -122,7 +122,7 @@
 			path = "СryptoСurrency";
 			sourceTree = "<group>";
 		};
-		BC823C492DA8D36700E6A09D /* Requests */ = {
+		BC823C492DA8D36700E6A09D /* Request */ = {
 			isa = PBXGroup;
 			children = (
 				BC823C4E2DA8E12D00E6A09D /* Endpoint.swift */,
@@ -132,14 +132,14 @@
 				BC823C4A2DA8D37900E6A09D /* RequestConstants.swift */,
 				BCBC9F422DA8E72D00149241 /* ErrorNetworkClient.swift */,
 			);
-			path = Requests;
+			path = Request;
 			sourceTree = "<group>";
 		};
 		BCAB55F42DA6863900173AC7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				BCE32B262DA8120600FFD51C /* TabBar */,
 				BCAB55F62DA6AB4F00173AC7 /* Auth */,
+				BCE32B262DA8120600FFD51C /* TabBar */,
 				BCE32B232DA804CC00FFD51C /* HomeViewController */,
 				BCE32B122DA801B400FFD51C /* PlugViewControllers */,
 			);
@@ -204,7 +204,7 @@
 			children = (
 				BCBC9F3F2DA8E1BF00149241 /* CryptoService.swift */,
 				BCE32B062DA7EE0000FFD51C /* AuthService.swift */,
-				BC823C492DA8D36700E6A09D /* Requests */,
+				BC823C492DA8D36700E6A09D /* Request */,
 			);
 			path = Services;
 			sourceTree = "<group>";

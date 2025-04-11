@@ -13,20 +13,25 @@ final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .ypWhiteGhost
+        view.backgroundColor = .ypPink
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        
         setupTitleView()
     }
     
     private func setupTitleView() {
         titleView.text = "Home"
-        titleView.font = .loginButton
+        titleView.font = .title
+        titleView.textColor = .ypWhite
         
         titleView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(titleView)
         
+        
         NSLayoutConstraint.activate([
-            titleView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titleView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            titleView.heightAnchor.constraint(equalToConstant: 48),
+            titleView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
+            titleView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32)
         ])
     }
 }

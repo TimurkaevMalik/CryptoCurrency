@@ -15,4 +15,8 @@ extension UIFont {
     static var loginButton: UIFont {
         UIFont.systemFont(ofSize: 15, weight: .semibold)
     }
+    
+    static var title: UIFont {
+        UIFont.systemFont(ofSize: 32, weight: .semibold)
+    }
 }
