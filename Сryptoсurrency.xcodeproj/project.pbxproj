@@ -12,6 +12,9 @@
 		BC021CD62DA6708500F9D5AA /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC021CD22DA6708500F9D5AA /* AuthViewController.swift */; };
 		BC021CD72DA6708500F9D5AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC021CCB2DA6708500F9D5AA /* Assets.xcassets */; };
 		BC021CD92DA6708500F9D5AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC021CCE2DA6708500F9D5AA /* LaunchScreen.storyboard */; };
+		BC823C4B2DA8D38100E6A09D /* RequestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC823C4A2DA8D37900E6A09D /* RequestConstants.swift */; };
+		BC823C4D2DA8DC9100E6A09D /* CryptoSymbol .swift in Sources */ = {isa = PBXBuildFile; fileRef = BC823C4C2DA8DC7100E6A09D /* CryptoSymbol .swift */; };
+		BC823C4F2DA8E12D00E6A09D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC823C4E2DA8E12D00E6A09D /* Endpoint.swift */; };
 		BCAB55F92DA6ABD400173AC7 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB55F82DA6ABC900173AC7 /* AuthTextField.swift */; };
 		BCAB55FD2DA6BBFC00173AC7 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB55FC2DA6BBF400173AC7 /* UIFont.swift */; };
 		BCAB55FF2DA6BFF200173AC7 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB55FE2DA6BFE700173AC7 /* LoginButton.swift */; };
@@ -42,6 +45,9 @@
 		BC021CCD2DA6708500F9D5AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC021CD12DA6708500F9D5AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BC021CD22DA6708500F9D5AA /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		BC823C4A2DA8D37900E6A09D /* RequestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestConstants.swift; sourceTree = "<group>"; };
+		BC823C4C2DA8DC7100E6A09D /* CryptoSymbol .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CryptoSymbol .swift"; sourceTree = "<group>"; };
+		BC823C4E2DA8E12D00E6A09D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		BCAB55F82DA6ABC900173AC7 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		BCAB55FC2DA6BBF400173AC7 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		BCAB55FE2DA6BFE700173AC7 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
@@ -98,7 +104,7 @@
 				BCAB55FA2DA6BBDF00173AC7 /* Helpers */,
 				BCAB55F72DA6ABB500173AC7 /* CustomViews */,
 				BCAB55F52DA6869200173AC7 /* Models */,
-				BCAB55F42DA6863900173AC7 /* Screens */,
+				BCAB55F42DA6863900173AC7 /* Scenes */,
 				BC021CCB2DA6708500F9D5AA /* Assets.xcassets */,
 				BC021CCC2DA6708500F9D5AA /* Info.plist */,
 				BC021CCE2DA6708500F9D5AA /* LaunchScreen.storyboard */,
@@ -108,7 +114,17 @@
 			path = "СryptoСurrency";
 			sourceTree = "<group>";
 		};
-		BCAB55F42DA6863900173AC7 /* Screens */ = {
+		BC823C492DA8D36700E6A09D /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				BC823C4E2DA8E12D00E6A09D /* Endpoint.swift */,
+				BC823C4C2DA8DC7100E6A09D /* CryptoSymbol .swift */,
+				BC823C4A2DA8D37900E6A09D /* RequestConstants.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		BCAB55F42DA6863900173AC7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				BCE32B262DA8120600FFD51C /* TabBar */,
@@ -116,7 +132,7 @@
 				BCE32B232DA804CC00FFD51C /* HomeViewController */,
 				BCE32B122DA801B400FFD51C /* PlugViewControllers */,
 			);
-			path = Screens;
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		BCAB55F52DA6869200173AC7 /* Models */ = {
@@ -175,6 +191,7 @@
 		BCE32B0B2DA7F17500FFD51C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				BC823C492DA8D36700E6A09D /* Requests */,
 				BCE32B062DA7EE0000FFD51C /* AuthService.swift */,
 			);
 			path = Services;
@@ -294,12 +311,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCE32B142DA8020100FFD51C /* ProfileViewController.swift in Sources */,
+				BC823C4F2DA8E12D00E6A09D /* Endpoint.swift in Sources */,
 				BCE32B0D2DA7F19C00FFD51C /* AuthViewModel.swift in Sources */,
 				BC021CD42DA6708500F9D5AA /* AppDelegate.swift in Sources */,
 				BCAB55FF2DA6BFF200173AC7 /* LoginButton.swift in Sources */,
 				BCE32B282DA8122000FFD51C /* CustomTabBar.swift in Sources */,
 				BCE32B2F2DA8371E00FFD51C /* MarketData.swift in Sources */,
 				BCE32B332DA8373A00FFD51C /* Supply.swift in Sources */,
+				BC823C4D2DA8DC9100E6A09D /* CryptoSymbol .swift in Sources */,
 				BCAB56012DA6C17200173AC7 /* CGFloat.swift in Sources */,
 				BCAB55F92DA6ABD400173AC7 /* AuthTextField.swift in Sources */,
 				BCE32B312DA8372D00FFD51C /* Marketcap.swift in Sources */,
@@ -311,6 +330,7 @@
 				BCE32B0F2DA7F2C800FFD51C /* ViewModelProtocols.swift in Sources */,
 				BCE32B162DA8022F00FFD51C /* WalletViewController.swift in Sources */,
 				BCE32B2D2DA8370300FFD51C /* CryptoData.swift in Sources */,
+				BC823C4B2DA8D38100E6A09D /* RequestConstants.swift in Sources */,
 				BCE32B112DA8012F00FFD51C /* TabBarController.swift in Sources */,
 				BCAB55FD2DA6BBFC00173AC7 /* UIFont.swift in Sources */,
 				BCE32B222DA8036C00FFD51C /* ListViewController.swift in Sources */,
