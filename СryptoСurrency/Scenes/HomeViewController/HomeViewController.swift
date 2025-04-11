@@ -10,6 +10,7 @@ import UIKit
 final class HomeViewController: UIViewController {
     
     private lazy var titleLabel = UILabel()
+    private lazy var trendingLabel = UILabel()
     private lazy var affiliateProgramLabel = UILabel()
     private lazy var learnMoreButton = RoundedButton(title: "Learn more")
     
@@ -31,6 +32,7 @@ final class HomeViewController: UIViewController {
         setupCubeImageView()
         setupAffiliateProgramLabel()
         setupLearnMoreButton()
+        setupTrendingLabel()
         
         setViewsPositionZ()
     }
@@ -51,6 +53,21 @@ final class HomeViewController: UIViewController {
             titleLabel.heightAnchor.constraint(equalToConstant: 48),
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .defaultMargin),
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32)
+        ])
+    }
+    
+    private func setupTrendingLabel() {
+        trendingLabel.text = "Trending"
+        trendingLabel.font = .affiliateProgram
+        trendingLabel.textColor = .ypBlackEclipse
+        
+        trendingLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(trendingLabel)
+        
+        NSLayoutConstraint.activate([
+            trendingLabel.heightAnchor.constraint(equalToConstant: 30),
+            trendingLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .defaultMargin),
+            trendingLabel.topAnchor.constraint(equalTo: trendContainer.topAnchor, constant: 24)
         ])
     }
     
