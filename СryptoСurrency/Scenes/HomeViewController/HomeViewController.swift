@@ -12,15 +12,7 @@ final class HomeViewController: UIViewController {
     private lazy var titleView = UILabel()
     
     private lazy var menuButton: MenuButton = {
-        let logoutAction = UIAction(title: "Выйти", image: .bin) { _ in
-            print("logoutAction")
-        }
-        let updateAction = UIAction(title: "Обновить", image: .rocket) { _ in
-            print("updateAction")
-        }
-        
-        return MenuButton(actions: [logoutAction,
-                                    updateAction])
+        MenuButton(actions: getMenuButtonActions())
     }()
     
     override func viewDidLoad() {
@@ -56,5 +48,17 @@ final class HomeViewController: UIViewController {
             menuButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -.defaultMargin),
             menuButton.centerYAnchor.constraint(equalTo: titleView.centerYAnchor)
         ])
+    }
+    
+    private func getMenuButtonActions() -> [UIAction] {
+        let logoutAction = UIAction(title: "Выйти", image: .bin) { _ in
+            AuthService.shared.logout()
+        }
+        
+        let updateAction = UIAction(title: "Обновить", image: .rocket) { _ in
+            print("updateAction")
+        }
+        
+        return [logoutAction, updateAction]
     }
 }
