@@ -10,7 +10,7 @@ import UIKit
 final class CurrencyCell: UITableViewCell {
     
     static let identifier = "CurrencyCell"
-    private let formatter = CustomNumberFormatter.shared
+    private let formatter = NumFormatter.shared
     
     private let iconImageView = UIImageView()
     private let percentImageView = UIImageView()
@@ -51,7 +51,7 @@ final class CurrencyCell: UITableViewCell {
         setupNameLabel()
         setupSymbolLabel()
         setupPriceLabel()
-        setupPercentChangeLabel()
+        setupPercentLabel()
         setupPercentImageView()
     }
 
@@ -124,8 +124,7 @@ final class CurrencyCell: UITableViewCell {
         ])
     }
     
-    ///TODO: add image
-    private func setupPercentChangeLabel() {
+    private func setupPercentLabel() {
         percentLabel.font = .currencySymbol
         percentLabel.textColor = .ypGray
         

@@ -32,6 +32,10 @@ extension UIFont {
         UIFont.systemFont(ofSize: 20, weight: .medium)
     }
     
+    static var mediumTitle: UIFont {
+        UIFont.systemFont(ofSize: 28, weight: .medium)
+    }
+    
     static var title: UIFont {
         UIFont.systemFont(ofSize: 32, weight: .semibold)
     }

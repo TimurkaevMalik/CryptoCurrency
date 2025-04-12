@@ -1,5 +1,5 @@
 //
-//  CustomNumberFormatter.swift
+//  NumFormatter.swift
 //  Сryptoсurrency
 //
 //  Created by Malik Timurkaev on 12.04.2025.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct CustomNumberFormatter {
-    static let shared = CustomNumberFormatter()
+struct NumFormatter {
+    static let shared = NumFormatter()
     
     private let formatter = NumberFormatter()
     
