@@ -7,7 +7,8 @@
 
 import UIKit
 
-final class CircleButton: UIButton {
+///Нету final потому-что есть наследник MenuButton
+class CircleButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

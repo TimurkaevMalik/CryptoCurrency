@@ -11,14 +11,10 @@ final class AuthViewController: UIViewController {
     
     private var vm: AuthViewModelProtocol
     
+    private lazy var loginButton = LoginButton()
     private lazy var robotImageView = UIImageView(image: .robot)
     private lazy var loginTextField = AuthTextField(type: .login)
     private lazy var passwordTextField = AuthTextField(type: .password)
-
-    private lazy var loginButton: LoginButton = {
-        let button = LoginButton(action: didTapLoginButton)
-        return button
-    }()
     
     init(viewModel: AuthViewModelProtocol) {
         vm = viewModel
@@ -56,6 +52,13 @@ final class AuthViewController: UIViewController {
     }
     
     private func setupLoginButton() {
+        loginButton.addAction(
+            UIAction { [weak self] _ in
+                guard let self else { return }
+                self.didTapLoginButton()
+            },
+            for: .touchUpInside)
+        
         view.addSubview(loginButton)
         
         NSLayoutConstraint.activate([
@@ -103,7 +106,7 @@ private extension AuthViewController {
     func didTapLoginButton() {
         let login = loginTextField.text
         let password = passwordTextField.text
-
+        
         vm.validateCredentials(login: login, password: password)
     }
     
@@ -116,20 +119,20 @@ private extension AuthViewController {
     }
     
     func showErrorAlert(message: String) {
-           let alert = UIAlertController(
-               title: "Ошибка",
-               message: message,
-               preferredStyle: .alert
-           )
-           
-           alert.addAction(UIAlertAction(title: "Повторить", style: .default))
-           alert.addAction(UIAlertAction(title: "Отменить", style: .destructive) { [weak self] _ in
-               guard let self else { return }
-               
-               self.loginTextField.text = ""
-               self.passwordTextField.text = ""
-           })
-           
-           present(alert, animated: true)
-       }
+        let alert = UIAlertController(
+            title: "Ошибка",
+            message: message,
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(title: "Повторить", style: .default))
+        alert.addAction(UIAlertAction(title: "Отменить", style: .destructive) { [weak self] _ in
+            guard let self else { return }
+            
+            self.loginTextField.text = ""
+            self.passwordTextField.text = ""
+        })
+        
+        present(alert, animated: true)
+    }
 }

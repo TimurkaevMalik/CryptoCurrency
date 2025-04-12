@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MenuButton: UIButton {
+final class MenuButton: CircleButton {
     
     private let actions: [UIAction]
     
@@ -22,11 +22,7 @@ final class MenuButton: UIButton {
     }
     
     private func configure() {
-        backgroundColor = .ypWhite.withAlphaComponent(0.8)
-        layer.cornerRadius = 24
-        layer.masksToBounds = true
         setImage(.ellipsis, for: .normal)
-        let size: CGFloat = 48
         let anchorView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 60))
         addSubview(anchorView)
         
@@ -34,11 +30,6 @@ final class MenuButton: UIButton {
         
         menu = UIMenu(children: actions)
         showsMenuAsPrimaryAction = true
-        
-        NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: size),
-            widthAnchor.constraint(equalToConstant: size)
-        ])
     }
     
     override func menuAttachmentPoint(for configuration: UIContextMenuConfiguration) -> CGPoint {
