@@ -59,13 +59,12 @@ final class HomeViewController: UIViewController {
     private func bindViewModel() {
         vm.onCryptsChange = { [weak self] in
             guard let self else { return }
-            print(vm.crypts)
             tableView.reloadData()
         }
         
-        vm.onFetchFailure = { error in
-            ///TODO: call alert
-            print(error)
+        vm.onFetchFailure = { [weak self] error in
+            guard let self else { return }
+            self.showErrorAlert(message: error.message)
         }
     }
     
@@ -255,6 +254,18 @@ private extension HomeViewController {
         }
         
         return [ascendingAction, descendingAction]
+    }
+    
+    func showErrorAlert(message: String) {
+        let alert = UIAlertController(
+            title: "Ошибка",
+            message: message,
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(title: "Пропустить", style: .default))
+        
+        present(alert, animated: true)
     }
     
     func showAuthViewController() {

@@ -15,8 +15,8 @@ final class HomeViewModel: HomeViewModelProtocol {
     
     private let cryptoService: CryptoServiceProtocol
     private let symbols = CryptoSymbol.allCases
-    private var currentFilter = Filter.ascending
     private let group = DispatchGroup()
+    private var currentFilter = Filter.ascending
     
     init(cryptoService: CryptoServiceProtocol) {
         self.cryptoService = cryptoService
