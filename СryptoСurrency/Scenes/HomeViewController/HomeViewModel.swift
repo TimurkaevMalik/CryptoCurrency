@@ -43,21 +43,30 @@ final class HomeViewModel: HomeViewModelProtocol {
             }
         }
         
-        group.notify(queue: .main) {
+        group.notify(queue: .main) { [weak self] in
+            guard let self else { return }
             self.crypts = tempCrypts
+            self.sortByCurrentFilter()
             self.onCryptsChange?()
         }
     }
     
     func sortAscending() {
         currentFilter = .ascending
-        crypts.sort(by: { $0.marketData.priceUSD > $1.marketData.priceUSD})
-        onCryptsChange?()
+        sortByCurrentFilter()
     }
     
     func sortDescending() {
         currentFilter = .descending
-        crypts.sort(by: { $0.marketData.priceUSD < $1.marketData.priceUSD})
+        sortByCurrentFilter()
+    }
+    
+    private func sortByCurrentFilter() {
+        if currentFilter == .ascending {
+            crypts.sort(by: { $0.marketData.priceUSD > $1.marketData.priceUSD})
+        } else {
+            crypts.sort(by: { $0.marketData.priceUSD < $1.marketData.priceUSD})
+        }
         onCryptsChange?()
     }
 }
