@@ -165,6 +165,13 @@ final class HomeViewController: UIViewController {
     }
     
     private func setupLearnMoreButton() {
+        learnMoreButton.addAction(
+            UIAction(handler: { [weak self] _ in
+                guard let self else { return }
+                self.showWebView()
+            }),
+            for: .touchUpInside)
+        
         view.addSubview(learnMoreButton)
         
         NSLayoutConstraint.activate([
@@ -291,6 +298,15 @@ private extension HomeViewController {
             
             let viewModel = AuthViewModel(authService: AuthService.shared)
             window.rootViewController = AuthViewController(viewModel: viewModel)
+        }
+    }
+    
+    private func showWebView() {
+
+        if let url = URL(string: "https://messari.io/governor/proposal/8fad81a3-9874-4d4b-a538-4dbaf76dd0c2") {
+            
+            let viewController = WebViewController(webViewURL: url)
+            present(viewController, animated: true)
         }
     }
     
