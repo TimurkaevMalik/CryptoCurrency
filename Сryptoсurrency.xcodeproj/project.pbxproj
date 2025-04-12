@@ -15,6 +15,7 @@
 		BC823C4B2DA8D38100E6A09D /* RequestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC823C4A2DA8D37900E6A09D /* RequestConstants.swift */; };
 		BC823C4D2DA8DC9100E6A09D /* CryptoSymbol .swift in Sources */ = {isa = PBXBuildFile; fileRef = BC823C4C2DA8DC7100E6A09D /* CryptoSymbol .swift */; };
 		BC823C4F2DA8E12D00E6A09D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC823C4E2DA8E12D00E6A09D /* Endpoint.swift */; };
+		BC8F6FD32DAA48BA0032BF36 /* NumFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F6FD22DAA48AD0032BF36 /* NumFormatter.swift */; };
 		BCAB55F92DA6ABD400173AC7 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB55F82DA6ABC900173AC7 /* AuthTextField.swift */; };
 		BCAB55FD2DA6BBFC00173AC7 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB55FC2DA6BBF400173AC7 /* UIFont.swift */; };
 		BCAB55FF2DA6BFF200173AC7 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB55FE2DA6BFE700173AC7 /* LoginButton.swift */; };
@@ -57,6 +58,7 @@
 		BC823C4A2DA8D37900E6A09D /* RequestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestConstants.swift; sourceTree = "<group>"; };
 		BC823C4C2DA8DC7100E6A09D /* CryptoSymbol .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CryptoSymbol .swift"; sourceTree = "<group>"; };
 		BC823C4E2DA8E12D00E6A09D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		BC8F6FD22DAA48AD0032BF36 /* NumFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumFormatter.swift; sourceTree = "<group>"; };
 		BCAB55F82DA6ABC900173AC7 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		BCAB55FC2DA6BBF400173AC7 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		BCAB55FE2DA6BFE700173AC7 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 		BCE32B0B2DA7F17500FFD51C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				BC8F6FD22DAA48AD0032BF36 /* NumFormatter.swift */,
 				BCBC9F3F2DA8E1BF00149241 /* CryptoService.swift */,
 				BCE32B062DA7EE0000FFD51C /* AuthService.swift */,
 				BC823C492DA8D36700E6A09D /* Request */,
@@ -362,6 +365,7 @@
 				BCE32B0F2DA7F2C800FFD51C /* ViewModelProtocols.swift in Sources */,
 				BCE32B162DA8022F00FFD51C /* WalletViewController.swift in Sources */,
 				BCBC9F4B2DA90E4500149241 /* MenuButton.swift in Sources */,
+				BC8F6FD32DAA48BA0032BF36 /* NumFormatter.swift in Sources */,
 				BCBC9F402DA8E1BF00149241 /* CryptoService.swift in Sources */,
 				BCE32B2D2DA8370300FFD51C /* CryptoData.swift in Sources */,
 				BCBC9F492DA8F5D200149241 /* HttpMethod.swift in Sources */,

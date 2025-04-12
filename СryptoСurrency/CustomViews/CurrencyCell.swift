@@ -9,6 +9,7 @@ import UIKit
 
 final class CurrencyCell: UITableViewCell {
     static let identifier = "CurrencyCell"
+    private let formatter = CustomNumberFormatter.shared
     
     private let iconImageView = UIImageView()
     private let nameLabel = UILabel()
@@ -32,8 +33,13 @@ final class CurrencyCell: UITableViewCell {
         iconImageView.image = image
         nameLabel.text = data.name
         symbolLabel.text = data.symbol
-        priceLabel.text = "\(data.marketData.priceUSD)"
-        percentChangeLabel.text = "\(data.marketData.percentChangeUSDLast24Hours)"
+       
+        let currencyUSD = formatter.currency(data.marketData.priceUSD, symbol: "$")
+        
+        let percent = formatter.percent(data.marketData.percentChangeUSDLast24Hours)
+        
+        priceLabel.text = currencyUSD
+        percentChangeLabel.text = percent
     }
     
     private func setupUI() {
