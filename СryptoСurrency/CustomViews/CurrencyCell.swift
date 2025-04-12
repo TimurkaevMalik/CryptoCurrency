@@ -8,14 +8,16 @@
 import UIKit
 
 final class CurrencyCell: UITableViewCell {
+    
     static let identifier = "CurrencyCell"
     private let formatter = CustomNumberFormatter.shared
     
     private let iconImageView = UIImageView()
+    private let percentImageView = UIImageView()
     private let nameLabel = UILabel()
     private let symbolLabel = UILabel()
     private let priceLabel = UILabel()
-    private let percentChangeLabel = UILabel()
+    private let percentLabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -27,19 +29,20 @@ final class CurrencyCell: UITableViewCell {
     }
     
     
-    func configureWith(_ data: CryptoData,
-                               image: UIImage) {
+    func configureWith(_ data: CryptoData) {
         
-        iconImageView.image = image
         nameLabel.text = data.name
         symbolLabel.text = data.symbol
-       
-        let currencyUSD = formatter.currency(data.marketData.priceUSD, symbol: "$")
+        iconImageView.image = .randomCurrencyIcon
         
-        let percent = formatter.percent(data.marketData.percentChangeUSDLastHour)
+        let percent = data.marketData.percentChangeUSDLastHour
         
-        priceLabel.text = currencyUSD
-        percentChangeLabel.text = percent
+        let percentString = formatter.percent(percent)
+        let currencyString = formatter.currency(data.marketData.priceUSD, symbol: "$")
+        
+        percentLabel.text = percentString
+        priceLabel.text = currencyString
+        percentImageView.image = percent.isLess(than: 0) ? .chevronDown : .chevronUp
     }
     
     private func setupUI() {
@@ -50,14 +53,16 @@ final class CurrencyCell: UITableViewCell {
         setupSymbolLabel()
         setupPriceLabel()
         setupPercentChangeLabel()
+        setupPercentImageView()
     }
 
     private func setAutoresizingMask() {
+        percentImageView.translatesAutoresizingMaskIntoConstraints = false
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         symbolLabel.translatesAutoresizingMaskIntoConstraints = false
         priceLabel.translatesAutoresizingMaskIntoConstraints = false
-        percentChangeLabel.translatesAutoresizingMaskIntoConstraints = false
+        percentLabel.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private func setupIconImageView() {
@@ -67,6 +72,17 @@ final class CurrencyCell: UITableViewCell {
             iconImageView.heightAnchor.constraint(equalToConstant: 50),
             iconImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
             iconImageView.leadingAnchor.constraint(equalTo: leadingAnchor)
+        ])
+    }
+    
+    private func setupPercentImageView() {
+        addSubview(percentImageView)
+        
+        NSLayoutConstraint.activate([
+            percentImageView.heightAnchor.constraint(equalToConstant: 12),
+            percentImageView.widthAnchor.constraint(equalToConstant: 12),
+            percentImageView.centerYAnchor.constraint(equalTo: percentLabel.centerYAnchor),
+            percentImageView.trailingAnchor.constraint(equalTo: percentLabel.leadingAnchor, constant: -5)
         ])
     }
     
@@ -111,15 +127,15 @@ final class CurrencyCell: UITableViewCell {
     
     ///TODO: add image
     private func setupPercentChangeLabel() {
-        percentChangeLabel.font = .currencySymbol
-        percentChangeLabel.textColor = .ypGray
+        percentLabel.font = .currencySymbol
+        percentLabel.textColor = .ypGray
         
-        addSubview(percentChangeLabel)
+        addSubview(percentLabel)
 
         NSLayoutConstraint.activate([
-            percentChangeLabel.heightAnchor.constraint(equalToConstant: 21),
-            percentChangeLabel.bottomAnchor.constraint(equalTo: iconImageView.bottomAnchor),
-            percentChangeLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
+            percentLabel.heightAnchor.constraint(equalToConstant: 21),
+            percentLabel.bottomAnchor.constraint(equalTo: iconImageView.bottomAnchor),
+            percentLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
 }

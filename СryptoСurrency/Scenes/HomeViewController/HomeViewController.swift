@@ -274,8 +274,7 @@ extension HomeViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.configureWith(vm.crypts[indexPath.row],
-                           image: .randomCurrencyIcon)
+        cell.configureWith(vm.crypts[indexPath.row])
        
         return cell
     }
