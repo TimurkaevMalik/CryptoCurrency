@@ -12,9 +12,10 @@ final class CurrencyViewController: UIViewController {
     private let currency: CryptoData
     private let formatter = NumFormatter.shared
     
+    private lazy var statisticContainer = UIView()
     private lazy var priceLabel = UILabel()
-    private lazy var percentImageView = UIImageView()
     private lazy var percentLabel = UILabel()
+    private lazy var percentImageView = UIImageView()
     
     init(currency: CryptoData) {
         self.currency = currency
@@ -28,9 +29,11 @@ final class CurrencyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .ypWhiteMedium
+        
         setupTileView()
         setupPriceLabel()
         setupPercentViews()
+        setupStatisticContainer()
     }
     
     private func setupTileView() {
@@ -76,6 +79,24 @@ final class CurrencyViewController: UIViewController {
             
             percentImageView.trailingAnchor.constraint(equalTo: percentLabel.leadingAnchor, constant: -5),
             percentImageView.centerYAnchor.constraint(equalTo: percentLabel.centerYAnchor)
+        ])
+    }
+    
+    private func setupStatisticContainer() {
+        statisticContainer.backgroundColor = .ypWhiteCloud
+
+        statisticContainer.layer.cornerRadius = .containerRadius
+        statisticContainer.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        statisticContainer.layer.masksToBounds = true
+        
+        view.addSubview(statisticContainer)
+        statisticContainer.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            statisticContainer.heightAnchor.constraint(equalToConstant: 242),
+            statisticContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            statisticContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            statisticContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
 }

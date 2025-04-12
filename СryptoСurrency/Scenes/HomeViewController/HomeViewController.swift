@@ -173,7 +173,7 @@ final class HomeViewController: UIViewController {
     private func setupTrendContainer() {
         trendContainer.backgroundColor = .ypWhiteGhost
         
-        trendContainer.layer.cornerRadius = 40
+        trendContainer.layer.cornerRadius = .containerRadius
         trendContainer.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         trendContainer.layer.masksToBounds = true
         
@@ -209,7 +209,6 @@ final class HomeViewController: UIViewController {
         tableView.separatorStyle = .none
         
         tableView.contentInset = UIEdgeInsets(top: 4, left: 0, bottom: 4, right: 0)
-        tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: trendContainer.topAnchor, constant: 70),
@@ -222,7 +221,7 @@ final class HomeViewController: UIViewController {
     private func setupLoadingView() {
         view.addSubview(loaderView)
         
-        loaderView.layer.cornerRadius = 40
+        loaderView.layer.cornerRadius = .containerRadius
         loaderView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         loaderView.layer.masksToBounds = true
         
