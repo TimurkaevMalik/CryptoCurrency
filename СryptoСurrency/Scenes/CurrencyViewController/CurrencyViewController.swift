@@ -13,6 +13,8 @@ final class CurrencyViewController: UIViewController {
     private let formatter = NumFormatter.shared
     
     private lazy var priceLabel = UILabel()
+    private lazy var percentImageView = UIImageView()
+    private lazy var percentLabel = UILabel()
     
     init(currency: CryptoData) {
         self.currency = currency
@@ -28,6 +30,7 @@ final class CurrencyViewController: UIViewController {
         view.backgroundColor = .ypWhiteMedium
         setupTileView()
         setupPriceLabel()
+        setupPercentViews()
     }
     
     private func setupTileView() {
@@ -48,6 +51,31 @@ final class CurrencyViewController: UIViewController {
             priceLabel.heightAnchor.constraint(equalToConstant: 42),
             priceLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
             priceLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+    }
+    
+    private func setupPercentViews() {
+        let percent = currency.marketData.percentChangeUSDLast24Hours
+        let percentString = formatter.percent(abs(percent))
+        
+        percentLabel.font = .currencySymbol
+        percentLabel.textColor = .ypGray
+        percentLabel.text = percentString
+        
+        percentImageView.image = percent.isLess(than: 0) ? .chevronDown : .chevronUp
+        
+        percentImageView.translatesAutoresizingMaskIntoConstraints = false
+        percentLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(percentLabel)
+        view.addSubview(percentImageView)
+
+        NSLayoutConstraint.activate([
+            percentLabel.heightAnchor.constraint(equalToConstant: 21),
+            percentLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor),
+            percentLabel.centerXAnchor.constraint(equalTo: priceLabel.centerXAnchor),
+            
+            percentImageView.trailingAnchor.constraint(equalTo: percentLabel.leadingAnchor, constant: -5),
+            percentImageView.centerYAnchor.constraint(equalTo: percentLabel.centerYAnchor)
         ])
     }
 }
