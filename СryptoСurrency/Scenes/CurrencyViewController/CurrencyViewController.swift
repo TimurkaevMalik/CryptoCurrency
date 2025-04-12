@@ -16,10 +16,21 @@ final class CurrencyViewController: UIViewController {
     private lazy var statisticTitleLabel = UILabel()
     private lazy var marketcapTitleLabel = UILabel()
     private lazy var marketcapLabel = UILabel()
-
+    
     private lazy var priceLabel = UILabel()
     private lazy var percentLabel = UILabel()
     private lazy var percentImageView = UIImageView()
+    
+    private lazy var circulatingSupplyLabel: StatisticView = {
+        let circulating = self.currency.supply.circulating
+        let circulatingString = self.formatter.currency(circulating,
+                                                        symbol: "ETH",
+                                                        position: .right)
+        
+        let statisticLabel = StatisticView(title: "Circulating Suply",
+                                           value: circulatingString)
+        return statisticLabel
+    }()
     
     init(currency: CryptoData) {
         self.currency = currency
@@ -40,6 +51,7 @@ final class CurrencyViewController: UIViewController {
         setupStatisticContainer()
         setupTrendingLabel()
         setupCapitalizationViews()
+        setupCirculatingSupplyLabel()
     }
     
     private func setupTileView() {
@@ -144,6 +156,17 @@ final class CurrencyViewController: UIViewController {
             
             marketcapLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -.defaultMargin),
             marketcapLabel.centerYAnchor.constraint(equalTo: marketcapTitleLabel.centerYAnchor)
+        ])
+    }
+    
+    private func setupCirculatingSupplyLabel() {
+        circulatingSupplyLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(circulatingSupplyLabel)
+        
+        NSLayoutConstraint.activate([
+            circulatingSupplyLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .defaultMargin),
+            circulatingSupplyLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -.defaultMargin),
+            circulatingSupplyLabel.topAnchor.constraint(equalTo: marketcapLabel.bottomAnchor, constant: 15)
         ])
     }
 }

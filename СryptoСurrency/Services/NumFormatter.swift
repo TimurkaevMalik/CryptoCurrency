@@ -20,11 +20,17 @@ struct NumFormatter {
     }
     
     func currency(_ value: Double,
-                  symbol: String) -> String {
+                  symbol: String,
+                  position: SymbolPosition = .left) -> String {
         formatter.minimumFractionDigits = 2
         formatter.maximumFractionDigits = 2
-        formatter.positiveFormat = symbol + "#,##0.00"
         formatter.currencySymbol = symbol
+        
+        if position == .left {
+            formatter.positiveFormat = symbol + "#,##0.00"
+        } else {
+            formatter.positiveFormat = "#,##0.00" + " " + symbol
+        }
         
         return formatter.string(from: NSNumber(value: value)) ?? "\(value)"
     }
@@ -37,5 +43,10 @@ struct NumFormatter {
         formatter.currencySymbol = "%"
         
         return formatter.string(from: NSNumber(value: value)) ?? "\(value)"
+    }
+    
+    enum SymbolPosition {
+        case right
+        case left
     }
 }

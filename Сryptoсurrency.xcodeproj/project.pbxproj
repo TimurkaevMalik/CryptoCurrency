@@ -18,6 +18,7 @@
 		BC8F6FD32DAA48BA0032BF36 /* NumFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F6FD22DAA48AD0032BF36 /* NumFormatter.swift */; };
 		BC8F6FD52DAA7AA50032BF36 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F6FD42DAA7AA00032BF36 /* LoaderView.swift */; };
 		BC8F6FD82DAA8AD90032BF36 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F6FD72DAA8AD80032BF36 /* CurrencyViewController.swift */; };
+		BC8F6FDA2DAAA3F70032BF36 /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F6FD92DAAA3F70032BF36 /* StatisticView.swift */; };
 		BCAB55F92DA6ABD400173AC7 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB55F82DA6ABC900173AC7 /* AuthTextField.swift */; };
 		BCAB55FD2DA6BBFC00173AC7 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB55FC2DA6BBF400173AC7 /* UIFont.swift */; };
 		BCAB55FF2DA6BFF200173AC7 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB55FE2DA6BFE700173AC7 /* LoginButton.swift */; };
@@ -63,6 +64,7 @@
 		BC8F6FD22DAA48AD0032BF36 /* NumFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumFormatter.swift; sourceTree = "<group>"; };
 		BC8F6FD42DAA7AA00032BF36 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		BC8F6FD72DAA8AD80032BF36 /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
+		BC8F6FD92DAAA3F70032BF36 /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
 		BCAB55F82DA6ABC900173AC7 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		BCAB55FC2DA6BBF400173AC7 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		BCAB55FE2DA6BFE700173AC7 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 		BCAB55F72DA6ABB500173AC7 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				BC8F6FD92DAAA3F70032BF36 /* StatisticView.swift */,
 				BC8F6FD42DAA7AA00032BF36 /* LoaderView.swift */,
 				BCBC9F532DA9543F00149241 /* CurrencyCell.swift */,
 				BCBC9F502DA946E900149241 /* RoundedButton.swift */,
@@ -388,6 +391,7 @@
 				BC823C4B2DA8D38100E6A09D /* RequestConstants.swift in Sources */,
 				BCBC9F472DA8EDEC00149241 /* RequestHeaders.swift in Sources */,
 				BCE32B112DA8012F00FFD51C /* TabBarController.swift in Sources */,
+				BC8F6FDA2DAAA3F70032BF36 /* StatisticView.swift in Sources */,
 				BCAB55FD2DA6BBFC00173AC7 /* UIFont.swift in Sources */,
 				BCE32B222DA8036C00FFD51C /* ListViewController.swift in Sources */,
 				BCE32B252DA804DD00FFD51C /* HomeViewController.swift in Sources */,
