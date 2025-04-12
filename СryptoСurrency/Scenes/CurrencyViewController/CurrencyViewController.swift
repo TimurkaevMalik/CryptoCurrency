@@ -13,6 +13,7 @@ final class CurrencyViewController: UIViewController {
     private let formatter = NumFormatter.shared
     
     private lazy var statisticContainer = UIView()
+    private lazy var statisticTitleLabel = UILabel()
     private lazy var priceLabel = UILabel()
     private lazy var percentLabel = UILabel()
     private lazy var percentImageView = UIImageView()
@@ -34,6 +35,7 @@ final class CurrencyViewController: UIViewController {
         setupPriceLabel()
         setupPercentViews()
         setupStatisticContainer()
+        setupTrendingLabel()
     }
     
     private func setupTileView() {
@@ -97,6 +99,21 @@ final class CurrencyViewController: UIViewController {
             statisticContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             statisticContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             statisticContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+    }
+    
+    private func setupTrendingLabel() {
+        statisticTitleLabel.text = "Market Statistic"
+        statisticTitleLabel.font = .affiliateProgram
+        statisticTitleLabel.textColor = .ypBlackEclipse
+        
+        statisticTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(statisticTitleLabel)
+        
+        NSLayoutConstraint.activate([
+            statisticTitleLabel.heightAnchor.constraint(equalToConstant: 30),
+            statisticTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .defaultMargin),
+            statisticTitleLabel.topAnchor.constraint(equalTo: statisticContainer.topAnchor, constant: 25)
         ])
     }
 }
