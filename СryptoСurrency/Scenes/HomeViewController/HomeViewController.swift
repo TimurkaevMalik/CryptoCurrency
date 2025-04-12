@@ -50,11 +50,15 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .ypPink
-        navigationController?.setNavigationBarHidden(true, animated: false)
         
         bindViewModel()
         updateCrypts()
         setupUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     private func bindViewModel() {
@@ -320,7 +324,8 @@ extension HomeViewController: UITableViewDataSource {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let controller = CurrencyViewController(currency: vm.crypts[indexPath.row])
+        let viewModel = CurrencyViewModel(currency: vm.crypts[indexPath.row])
+        let controller = CurrencyViewController(viewModel: viewModel)
         navigationController?.pushViewController(controller, animated: true)
     }
 }

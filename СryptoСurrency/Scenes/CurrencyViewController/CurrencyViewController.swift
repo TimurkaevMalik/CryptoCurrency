@@ -9,14 +9,14 @@ import UIKit
 
 final class CurrencyViewController: UIViewController {
     
-    private let currency: CryptoData
+    private let vm: CurrencyViewModelProtocol
     private let formatter = NumFormatter.shared
     
     private lazy var statisticContainer = UIView()
     private lazy var statisticTitleLabel = UILabel()
     
     private lazy var marketcapLabel: StatisticView = {
-        let marketcap = currency.marketcap.currentMarketcapUSD
+        let marketcap = vm.currency.marketcap.currentMarketcapUSD
         let marketcapString = formatter.currency(marketcap,
                                                  symbol: "$")
         
@@ -30,8 +30,8 @@ final class CurrencyViewController: UIViewController {
     private lazy var percentImageView = UIImageView()
     
     private lazy var circulatingSupplyLabel: StatisticView = {
-        let circulating = self.currency.supply.circulating
-        let circulatingString = self.formatter.currency(circulating,
+        let circulating = vm.currency.supply.circulating
+        let circulatingString = formatter.currency(circulating,
                                                         symbol: "ETH",
                                                         position: .right)
         
@@ -40,8 +40,8 @@ final class CurrencyViewController: UIViewController {
         return statisticLabel
     }()
     
-    init(currency: CryptoData) {
-        self.currency = currency
+    init(viewModel: CurrencyViewModelProtocol) {
+        vm = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -65,13 +65,14 @@ final class CurrencyViewController: UIViewController {
     private func setupTileView() {
         navigationController?.setNavigationBarHidden(false, animated: false)
         navigationController?.navigationBar.prefersLargeTitles = false
-        navigationItem.title = "\(currency.name) (\(currency.symbol))"
+        navigationItem.title = "\(vm.currency.name) (\(vm.currency.symbol))"
     }
     
     private func setupPriceLabel() {
         priceLabel.font = .mediumTitle
         priceLabel.textColor = .ypBlackEclipse
-        priceLabel.text = formatter.currency(currency.marketData.priceUSD, symbol: "$")
+        priceLabel.text = formatter.currency(vm.currency.marketData.priceUSD,
+                                             symbol: "$")
         
         priceLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(priceLabel)
@@ -84,7 +85,7 @@ final class CurrencyViewController: UIViewController {
     }
     
     private func setupPercentViews() {
-        let percent = currency.marketData.percentChangeUSDLast24Hours
+        let percent = vm.currency.marketData.percentChangeUSDLast24Hours
         let percentString = formatter.percent(abs(percent))
         
         percentLabel.font = .currencySymbol

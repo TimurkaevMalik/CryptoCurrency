@@ -21,3 +21,7 @@ protocol HomeViewModelProtocol {
     func sortAscending()
     func sortDescending()
 }
+
+protocol CurrencyViewModelProtocol {
+    var currency: CryptoData { get }
+}
