@@ -14,6 +14,9 @@ final class CurrencyViewController: UIViewController {
     
     private lazy var statisticContainer = UIView()
     private lazy var statisticTitleLabel = UILabel()
+    private lazy var marketcapTitleLabel = UILabel()
+    private lazy var marketcapLabel = UILabel()
+
     private lazy var priceLabel = UILabel()
     private lazy var percentLabel = UILabel()
     private lazy var percentImageView = UIImageView()
@@ -36,6 +39,7 @@ final class CurrencyViewController: UIViewController {
         setupPercentViews()
         setupStatisticContainer()
         setupTrendingLabel()
+        setupCapitalizationViews()
     }
     
     private func setupTileView() {
@@ -114,6 +118,32 @@ final class CurrencyViewController: UIViewController {
             statisticTitleLabel.heightAnchor.constraint(equalToConstant: 30),
             statisticTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .defaultMargin),
             statisticTitleLabel.topAnchor.constraint(equalTo: statisticContainer.topAnchor, constant: 25)
+        ])
+    }
+    
+    private func setupCapitalizationViews() {
+        let marketcap = currency.marketcap.currentMarketcapUSD
+        marketcapLabel.text = formatter.currency(marketcap,
+                                                 symbol: "$")
+        marketcapLabel.textColor = .ypBlackEclipse
+        marketcapLabel.font = .learnMoreButton
+        
+        marketcapTitleLabel.text = "Market capitalization"
+        marketcapTitleLabel.font = .currencySymbol
+        marketcapTitleLabel.textColor = .ypGray
+        
+        marketcapTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        marketcapLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(marketcapTitleLabel)
+        view.addSubview(marketcapLabel)
+        
+        NSLayoutConstraint.activate([
+            marketcapTitleLabel.heightAnchor.constraint(equalToConstant: 21),
+            marketcapTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .defaultMargin),
+            marketcapTitleLabel.topAnchor.constraint(equalTo: statisticTitleLabel.bottomAnchor, constant: 15),
+            
+            marketcapLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -.defaultMargin),
+            marketcapLabel.centerYAnchor.constraint(equalTo: marketcapTitleLabel.centerYAnchor)
         ])
     }
 }
