@@ -8,7 +8,9 @@
 import Foundation
 
 final class HomeViewModel: HomeViewModelProtocol {
-    var onFetchSuccess: ((CryptoData) -> Void)?
+    var crypts: [CryptoData] = []
+    
+    var onFetchSuccess: (() -> Void)?
     var onFetchFailure: ((ErrorNetworkClient) -> Void)?
     
     private let cryptoService: CryptoServiceProtocol
@@ -19,16 +21,21 @@ final class HomeViewModel: HomeViewModelProtocol {
     }
     
     func fetchCrypts() {
-        cryptoService.fetchCrypt(symbols[0]) { [weak self] result in
-            
-            guard let self else { return }
-            
-            switch result {
+        symbols.forEach { symbol in
+        
+            cryptoService.fetchCrypt(symbol) { [weak self] result in
                 
-            case .success(let crypt):
-                self.onFetchSuccess?(crypt)
-            case .failure(let error):
-                self.onFetchFailure?(error)
+                guard let self else { return }
+                
+                switch result {
+                    
+                case .success(let crypt):
+                    self.crypts.append(crypt)
+                    self.onFetchSuccess?()
+                    
+                case .failure(let error):
+                    self.onFetchFailure?(error)
+                }
             }
         }
     }

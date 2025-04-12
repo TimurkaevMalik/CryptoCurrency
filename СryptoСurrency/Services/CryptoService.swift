@@ -9,14 +9,8 @@ import Foundation
 
 final class CryptoService: CryptoServiceProtocol {
     
-    private var currentTask: URLSessionTask?
-    
     func fetchCrypt(_ symbol: CryptoSymbol,
                     completion: @escaping (CryptoResponse) -> Void) {
-        
-        if currentTask != nil {
-            currentTask?.cancel()
-        }
         
         guard let request = makeRequest(.get, endpoint: .assetMetrics(symbol: symbol)) else {
             
@@ -25,12 +19,12 @@ final class CryptoService: CryptoServiceProtocol {
         }
         
         let session = URLSession.shared.dataTask(with: request) { data, response, error in
-           
+            
             DispatchQueue.main.async {
                 
                 if let error = error as? NSError {
-                    completion(.failure(.operation(.urlSessionError,
-                                                   code: "\(error.code)")))
+                    completion(.failure(.operation(.urlSessionError, code: "\(error.code)")))
+                    
                     return
                 }
                 
@@ -59,7 +53,6 @@ final class CryptoService: CryptoServiceProtocol {
             }
         }
         
-        currentTask = session
         session.resume()
     }
     

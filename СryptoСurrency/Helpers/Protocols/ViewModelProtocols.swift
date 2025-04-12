@@ -14,8 +14,8 @@ protocol AuthViewModelProtocol {
 }
 
 protocol HomeViewModelProtocol {
-    ///TODO: do I need optional?
-    var onFetchSuccess: ((CryptoData) -> Void)? { get set }
+    var crypts: [CryptoData] { get set }
+    var onFetchSuccess: (() -> Void)? { get set }
     var onFetchFailure: ((ErrorNetworkClient) -> Void)? { get set }
     func fetchCrypts()
 }

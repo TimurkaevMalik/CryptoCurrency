@@ -9,11 +9,22 @@ import UIKit
 
 final class TabBarController: UITabBarController {
     
-    private let homeViewController = HomeViewController()
+    private let homeViewController: HomeViewController
     private let graphViewController = GraphViewController()
     private let walletViewController = WalletViewController()
     private let listViewController = ListViewController()
     private let profileViewController = ProfileViewController()
+    
+    init() {
+        let homeViewModel = HomeViewModel(cryptoService: CryptoService())
+        homeViewController = HomeViewController(viewModel: homeViewModel)
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

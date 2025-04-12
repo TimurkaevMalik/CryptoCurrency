@@ -9,7 +9,7 @@ import UIKit
 
 final class AuthViewController: UIViewController {
     
-    private var viewModel: AuthViewModelProtocol
+    private var vm: AuthViewModelProtocol
     
     private lazy var robotImageView = UIImageView(image: .robot)
     private lazy var loginTextField = AuthTextField(type: .login)
@@ -21,7 +21,7 @@ final class AuthViewController: UIViewController {
     }()
     
     init(viewModel: AuthViewModelProtocol) {
-        self.viewModel = viewModel
+        vm = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -37,12 +37,12 @@ final class AuthViewController: UIViewController {
     }
     
     private func bindViewModel() {
-        viewModel.onAuthSuccess = { [weak self] in
+        vm.onAuthSuccess = { [weak self] in
             guard let self else { return }
             self.showTabBarController()
         }
         
-        viewModel.onAuthFailure = { [weak self] message in
+        vm.onAuthFailure = { [weak self] message in
             guard let self else { return }
             self.showErrorAlert(message: message)
         }
@@ -104,7 +104,7 @@ private extension AuthViewController {
         let login = loginTextField.text
         let password = passwordTextField.text
 
-        viewModel.validateCredentials(login: login, password: password)
+        vm.validateCredentials(login: login, password: password)
     }
     
     func showTabBarController() {

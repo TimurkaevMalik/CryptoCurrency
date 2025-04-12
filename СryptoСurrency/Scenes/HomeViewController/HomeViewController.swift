@@ -9,6 +9,8 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     
+    private var vm: HomeViewModelProtocol
+    
     private lazy var titleLabel = UILabel()
     private lazy var trendingLabel = UILabel()
     private lazy var affiliateProgramLabel = UILabel()
@@ -35,11 +37,39 @@ final class HomeViewController: UIViewController {
         return tableView
     }()
     
+    init(viewModel: HomeViewModelProtocol) {
+        vm = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .ypPink
         navigationController?.setNavigationBarHidden(true, animated: false)
         
+        bindViewModel()
+        fetchImages()
+        setupUI()
+    }
+    
+    private func bindViewModel() {
+        vm.onFetchSuccess = { [weak self] in
+            guard let self else { return }
+            print(vm.crypts)
+            tableView.reloadData()
+        }
+        
+        vm.onFetchFailure = { error in
+            ///TODO: call alert
+            print(error)
+        }
+    }
+    
+    private func setupUI() {
         setupTitleLabel()
         setupMenuButton()
         setupTrendContainer()
@@ -172,14 +202,23 @@ final class HomeViewController: UIViewController {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
-        tableView.separatorInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
+        tableView.showsVerticalScrollIndicator = false
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
+        
+        tableView.contentInset = UIEdgeInsets(top: 4, left: 0, bottom: 4, right: 0)
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: trendContainer.topAnchor, constant: 70),
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .defaultMargin),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -.defaultMargin)
         ])
+    }
+    
+    private func fetchImages() {
+        vm.fetchCrypts()
     }
 }
 
@@ -224,7 +263,7 @@ private extension HomeViewController {
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1
+        return vm.crypts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -235,12 +274,15 @@ extension HomeViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
+        cell.configureWith(vm.crypts[indexPath.row],
+                           image: .randomCurrencyIcon)
+       
         return cell
     }
 }
 
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 70
     }
 }
