@@ -14,6 +14,7 @@ final class CurrencyViewController: UIViewController {
     
     private lazy var statisticContainer = UIView()
     private lazy var statisticTitleLabel = UILabel()
+    private lazy var backButton = CircleButton()
     
     private lazy var marketcapLabel: StatisticView = {
         let marketcap = vm.currency.marketcap.currentMarketcapUSD
@@ -53,6 +54,7 @@ final class CurrencyViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .ypWhiteMedium
         
+        setupBackButton()
         setupTileView()
         setupPriceLabel()
         setupPercentViews()
@@ -60,6 +62,21 @@ final class CurrencyViewController: UIViewController {
         setupTrendingLabel()
         setupMarketcapLabel()
         setupCirculatingSupplyLabel()
+    }
+    
+    private func setupBackButton() {
+        backButton.setImage(UIImage(systemName: "arrow.left"), for: .normal)
+        
+        backButton.addAction(
+            UIAction(handler: { [weak self] _ in
+                guard let self else { return }
+                self.navigationController?.popViewController(animated: true)
+            }),
+            for: .touchUpInside)
+        
+        let backButtonItem = UIBarButtonItem(customView: backButton)
+        
+        navigationItem.leftBarButtonItem = backButtonItem
     }
     
     private func setupTileView() {
