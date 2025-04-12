@@ -10,7 +10,7 @@ import Foundation
 final class HomeViewModel: HomeViewModelProtocol {
     var crypts: [CryptoData] = []
     
-    var onCryptsChange: (() -> Void)?
+    var onFetchFinish: (() -> Void)?
     var onFetchFailure: ((ErrorNetworkClient) -> Void)?
     
     private let cryptoService: CryptoServiceProtocol
@@ -47,7 +47,7 @@ final class HomeViewModel: HomeViewModelProtocol {
             guard let self else { return }
             self.crypts = tempCrypts
             self.sortByCurrentFilter()
-            self.onCryptsChange?()
+            self.onFetchFinish?()
         }
     }
     
@@ -67,7 +67,7 @@ final class HomeViewModel: HomeViewModelProtocol {
         } else {
             crypts.sort(by: { $0.marketData.priceUSD < $1.marketData.priceUSD})
         }
-        onCryptsChange?()
+        onFetchFinish?()
     }
 }
 

@@ -18,7 +18,8 @@ final class HomeViewController: UIViewController {
     
     private lazy var trendContainer = UIView()
     private lazy var cubeImageView = UIImageView()
-    
+    private lazy var loaderView = LoaderView()
+
     private lazy var menuButton: MenuButton = {
         MenuButton(actions: menuButtonActions)
     }()
@@ -57,9 +58,10 @@ final class HomeViewController: UIViewController {
     }
     
     private func bindViewModel() {
-        vm.onCryptsChange = { [weak self] in
+        vm.onFetchFinish = { [weak self] in
             guard let self else { return }
-            tableView.reloadData()
+            self.loaderView.stopAnimating()
+            self.tableView.reloadData()
         }
         
         vm.onFetchFailure = { [weak self] error in
@@ -78,6 +80,7 @@ final class HomeViewController: UIViewController {
         setupTrendingLabel()
         setupFilterButton()
         setupTableView()
+        setupLoadingView()
         
         setViewsPositionZ()
     }
@@ -216,7 +219,23 @@ final class HomeViewController: UIViewController {
         ])
     }
     
+    private func setupLoadingView() {
+        view.addSubview(loaderView)
+        
+        loaderView.layer.cornerRadius = 40
+        loaderView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        loaderView.layer.masksToBounds = true
+        
+        NSLayoutConstraint.activate([
+            loaderView.leadingAnchor.constraint(equalTo: trendContainer.leadingAnchor),
+            loaderView.trailingAnchor.constraint(equalTo: trendContainer.trailingAnchor),
+            loaderView.topAnchor.constraint(equalTo: trendContainer.topAnchor),
+            loaderView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
+    
     private func updateCrypts() {
+        loaderView.startAnimating()
         vm.updateCrypts()
     }
 }
