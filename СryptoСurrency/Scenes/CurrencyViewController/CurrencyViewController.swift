@@ -14,8 +14,16 @@ final class CurrencyViewController: UIViewController {
     
     private lazy var statisticContainer = UIView()
     private lazy var statisticTitleLabel = UILabel()
-    private lazy var marketcapTitleLabel = UILabel()
-    private lazy var marketcapLabel = UILabel()
+    
+    private lazy var marketcapLabel: StatisticView = {
+        let marketcap = currency.marketcap.currentMarketcapUSD
+        let marketcapString = formatter.currency(marketcap,
+                                                 symbol: "$")
+        
+        let statisticLabel = StatisticView(title: "Market capitalization",
+                                           value: marketcapString)
+        return statisticLabel
+    }()
     
     private lazy var priceLabel = UILabel()
     private lazy var percentLabel = UILabel()
@@ -50,7 +58,7 @@ final class CurrencyViewController: UIViewController {
         setupPercentViews()
         setupStatisticContainer()
         setupTrendingLabel()
-        setupCapitalizationViews()
+        setupMarketcapLabel()
         setupCirculatingSupplyLabel()
     }
     
@@ -133,29 +141,15 @@ final class CurrencyViewController: UIViewController {
         ])
     }
     
-    private func setupCapitalizationViews() {
-        let marketcap = currency.marketcap.currentMarketcapUSD
-        marketcapLabel.text = formatter.currency(marketcap,
-                                                 symbol: "$")
-        marketcapLabel.textColor = .ypBlackEclipse
-        marketcapLabel.font = .learnMoreButton
+    private func setupMarketcapLabel() {
         
-        marketcapTitleLabel.text = "Market capitalization"
-        marketcapTitleLabel.font = .currencySymbol
-        marketcapTitleLabel.textColor = .ypGray
-        
-        marketcapTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         marketcapLabel.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(marketcapTitleLabel)
         view.addSubview(marketcapLabel)
         
         NSLayoutConstraint.activate([
-            marketcapTitleLabel.heightAnchor.constraint(equalToConstant: 21),
-            marketcapTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .defaultMargin),
-            marketcapTitleLabel.topAnchor.constraint(equalTo: statisticTitleLabel.bottomAnchor, constant: 15),
-            
+            marketcapLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .defaultMargin),
             marketcapLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -.defaultMargin),
-            marketcapLabel.centerYAnchor.constraint(equalTo: marketcapTitleLabel.centerYAnchor)
+            marketcapLabel.topAnchor.constraint(equalTo: statisticTitleLabel.bottomAnchor, constant: 15)
         ])
     }
     
