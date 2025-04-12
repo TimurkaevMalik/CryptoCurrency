@@ -36,7 +36,7 @@ final class CurrencyCell: UITableViewCell {
        
         let currencyUSD = formatter.currency(data.marketData.priceUSD, symbol: "$")
         
-        let percent = formatter.percent(data.marketData.percentChangeUSDLast24Hours)
+        let percent = formatter.percent(data.marketData.percentChangeUSDLastHour)
         
         priceLabel.text = currencyUSD
         percentChangeLabel.text = percent
