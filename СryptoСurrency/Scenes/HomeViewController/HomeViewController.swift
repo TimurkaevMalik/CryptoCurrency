@@ -57,7 +57,7 @@ final class HomeViewController: UIViewController {
     }
     
     private func bindViewModel() {
-        vm.onFetchSuccess = { [weak self] in
+        vm.onCryptsChange = { [weak self] in
             guard let self else { return }
             print(vm.crypts)
             tableView.reloadData()
@@ -239,12 +239,16 @@ private extension HomeViewController {
     }
     
     var filterButtonActions: [UIAction] {
-        let ascendingAction = UIAction(title: "По возрастинию", image: .chevronUp) { _ in
-            print("По возрастинию")
+        let ascendingAction = UIAction(title: "По возрастинию", image: .chevronUp) { [weak self] _ in
+            guard let self else { return }
+            
+            vm.sortAscending()
         }
         
-        let descendingAction = UIAction(title: "По убыванию", image: .chevronDown) { _ in
-            print("По убыванию")
+        let descendingAction = UIAction(title: "По убыванию", image: .chevronDown) { [weak self] _ in
+            guard let self else { return }
+            
+            vm.sortDescending()
         }
         
         return [ascendingAction, descendingAction]

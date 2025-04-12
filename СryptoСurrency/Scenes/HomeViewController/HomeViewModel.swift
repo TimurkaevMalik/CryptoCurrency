@@ -10,7 +10,7 @@ import Foundation
 final class HomeViewModel: HomeViewModelProtocol {
     var crypts: [CryptoData] = []
     
-    var onFetchSuccess: (() -> Void)?
+    var onCryptsChange: (() -> Void)?
     var onFetchFailure: ((ErrorNetworkClient) -> Void)?
     
     private let cryptoService: CryptoServiceProtocol
@@ -31,12 +31,22 @@ final class HomeViewModel: HomeViewModelProtocol {
                     
                 case .success(let crypt):
                     self.crypts.append(crypt)
-                    self.onFetchSuccess?()
+                    self.onCryptsChange?()
                     
                 case .failure(let error):
                     self.onFetchFailure?(error)
                 }
             }
         }
+    }
+    
+    func sortAscending() {
+        crypts.sort(by: { $0.marketData.priceUSD > $1.marketData.priceUSD})
+        onCryptsChange?()
+    }
+    
+    func sortDescending() {
+        crypts.sort(by: { $0.marketData.priceUSD < $1.marketData.priceUSD})
+        onCryptsChange?()
     }
 }
