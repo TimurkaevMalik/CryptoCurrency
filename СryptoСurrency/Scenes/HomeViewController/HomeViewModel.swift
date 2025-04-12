@@ -15,14 +15,18 @@ final class HomeViewModel: HomeViewModelProtocol {
     
     private let cryptoService: CryptoServiceProtocol
     private let symbols = CryptoSymbol.allCases
+    private var currentFilter = Filter.ascending
+    private let group = DispatchGroup()
     
     init(cryptoService: CryptoServiceProtocol) {
         self.cryptoService = cryptoService
     }
     
-    func fetchCrypts() {
-        symbols.forEach { symbol in
+    func updateCrypts() {
+        var tempCrypts = [CryptoData]()
         
+        symbols.forEach { symbol in
+            group.enter()
             cryptoService.fetchCrypt(symbol) { [weak self] result in
                 
                 guard let self else { return }
@@ -30,23 +34,37 @@ final class HomeViewModel: HomeViewModelProtocol {
                 switch result {
                     
                 case .success(let crypt):
-                    self.crypts.append(crypt)
-                    self.onCryptsChange?()
+                    tempCrypts.append(crypt)
                     
                 case .failure(let error):
                     self.onFetchFailure?(error)
                 }
+                group.leave()
             }
+        }
+        
+        group.notify(queue: .main) {
+            self.crypts = tempCrypts
+            self.onCryptsChange?()
         }
     }
     
     func sortAscending() {
+        currentFilter = .ascending
         crypts.sort(by: { $0.marketData.priceUSD > $1.marketData.priceUSD})
         onCryptsChange?()
     }
     
     func sortDescending() {
+        currentFilter = .descending
         crypts.sort(by: { $0.marketData.priceUSD < $1.marketData.priceUSD})
         onCryptsChange?()
+    }
+}
+
+private extension HomeViewModel {
+    enum Filter {
+        case ascending
+        case descending
     }
 }

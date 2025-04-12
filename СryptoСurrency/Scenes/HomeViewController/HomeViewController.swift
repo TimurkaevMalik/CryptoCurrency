@@ -52,7 +52,7 @@ final class HomeViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: false)
         
         bindViewModel()
-        fetchImages()
+        updateCrypts()
         setupUI()
     }
     
@@ -217,22 +217,25 @@ final class HomeViewController: UIViewController {
         ])
     }
     
-    private func fetchImages() {
-        vm.fetchCrypts()
+    private func updateCrypts() {
+        vm.updateCrypts()
     }
 }
 
 private extension HomeViewController {
     var menuButtonActions: [UIAction] {
-        let logoutAction = UIAction(title: "Выйти", image: .bin) { [weak self] _ in
+        let logoutAction = UIAction(title: "Выйти",
+                                    image: .bin) { [weak self] _ in
             guard let self else { return }
             
             AuthService.shared.logout()
             self.showAuthViewController()
         }
         
-        let updateAction = UIAction(title: "Обновить", image: .rocket) { _ in
-            print("updateAction")
+        let updateAction = UIAction(title: "Обновить",
+                                    image: .rocket) { [weak self] _ in
+            guard let self else { return }
+            self.updateCrypts()
         }
         
         return [logoutAction, updateAction]

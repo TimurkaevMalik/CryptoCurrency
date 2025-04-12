@@ -17,7 +17,7 @@ protocol HomeViewModelProtocol {
     var crypts: [CryptoData] { get set }
     var onCryptsChange: (() -> Void)? { get set }
     var onFetchFailure: ((ErrorNetworkClient) -> Void)? { get set }
-    func fetchCrypts()
+    func updateCrypts()
     func sortAscending()
     func sortDescending()
 }

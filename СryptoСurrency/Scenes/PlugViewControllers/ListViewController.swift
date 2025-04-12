@@ -75,17 +75,3 @@ final class ListViewController: UIViewController {
         ])
     }
 }
-
-private extension HomeViewController {
-    func getMenuButtonActions() -> [UIAction] {
-        let logoutAction = UIAction(title: "Выйти", image: .bin) { _ in
-            AuthService.shared.logout()
-        }
-        
-        let updateAction = UIAction(title: "Обновить", image: .rocket) { _ in
-            print("updateAction")
-        }
-        
-        return [logoutAction, updateAction]
-    }
-}
