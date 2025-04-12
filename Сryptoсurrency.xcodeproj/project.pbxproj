@@ -17,6 +17,7 @@
 		BC823C4F2DA8E12D00E6A09D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC823C4E2DA8E12D00E6A09D /* Endpoint.swift */; };
 		BC8F6FD32DAA48BA0032BF36 /* NumFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F6FD22DAA48AD0032BF36 /* NumFormatter.swift */; };
 		BC8F6FD52DAA7AA50032BF36 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F6FD42DAA7AA00032BF36 /* LoaderView.swift */; };
+		BC8F6FD82DAA8AD90032BF36 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F6FD72DAA8AD80032BF36 /* CurrencyViewController.swift */; };
 		BCAB55F92DA6ABD400173AC7 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB55F82DA6ABC900173AC7 /* AuthTextField.swift */; };
 		BCAB55FD2DA6BBFC00173AC7 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB55FC2DA6BBF400173AC7 /* UIFont.swift */; };
 		BCAB55FF2DA6BFF200173AC7 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB55FE2DA6BFE700173AC7 /* LoginButton.swift */; };
@@ -61,6 +62,7 @@
 		BC823C4E2DA8E12D00E6A09D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		BC8F6FD22DAA48AD0032BF36 /* NumFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumFormatter.swift; sourceTree = "<group>"; };
 		BC8F6FD42DAA7AA00032BF36 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		BC8F6FD72DAA8AD80032BF36 /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
 		BCAB55F82DA6ABC900173AC7 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		BCAB55FC2DA6BBF400173AC7 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		BCAB55FE2DA6BFE700173AC7 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
@@ -149,12 +151,21 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
+		BC8F6FD62DAA8AAA0032BF36 /* CurrencyViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BC8F6FD72DAA8AD80032BF36 /* CurrencyViewController.swift */,
+			);
+			path = CurrencyViewController;
+			sourceTree = "<group>";
+		};
 		BCAB55F42DA6863900173AC7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				BCAB55F62DA6AB4F00173AC7 /* Auth */,
 				BCE32B262DA8120600FFD51C /* TabBar */,
 				BCE32B232DA804CC00FFD51C /* HomeViewController */,
+				BC8F6FD62DAA8AAA0032BF36 /* CurrencyViewController */,
 				BCE32B122DA801B400FFD51C /* PlugViewControllers */,
 			);
 			path = Scenes;
@@ -344,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCE32B142DA8020100FFD51C /* ProfileViewController.swift in Sources */,
+				BC8F6FD82DAA8AD90032BF36 /* CurrencyViewController.swift in Sources */,
 				BC823C4F2DA8E12D00E6A09D /* Endpoint.swift in Sources */,
 				BCE32B0D2DA7F19C00FFD51C /* AuthViewModel.swift in Sources */,
 				BC021CD42DA6708500F9D5AA /* AppDelegate.swift in Sources */,

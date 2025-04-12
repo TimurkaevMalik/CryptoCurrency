@@ -36,7 +36,6 @@ final class CurrencyCell: UITableViewCell {
         iconImageView.image = .randomCurrencyIcon
         
         let percent = data.marketData.percentChangeUSDLastHour
-        print(percent)
         let percentString = formatter.percent(abs(percent))
         let currencyString = formatter.currency(data.marketData.priceUSD, symbol: "$")
         

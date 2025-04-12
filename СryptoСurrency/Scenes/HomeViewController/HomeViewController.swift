@@ -233,11 +233,6 @@ final class HomeViewController: UIViewController {
             loaderView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
-    
-    private func updateCrypts() {
-        loaderView.startAnimating()
-        vm.updateCrypts()
-    }
 }
 
 private extension HomeViewController {
@@ -295,6 +290,11 @@ private extension HomeViewController {
             window.rootViewController = AuthViewController(viewModel: viewModel)
         }
     }
+    
+    func updateCrypts() {
+        loaderView.startAnimating()
+        vm.updateCrypts()
+    }
 }
 
 extension HomeViewController: UITableViewDataSource {
@@ -311,9 +311,18 @@ extension HomeViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
+        cell.selectionStyle = .blue
         cell.configureWith(vm.crypts[indexPath.row])
        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let controller = CurrencyViewController(currency: vm.crypts[indexPath.row])
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
 
