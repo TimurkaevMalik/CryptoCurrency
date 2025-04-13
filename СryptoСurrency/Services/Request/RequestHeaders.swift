@@ -11,10 +11,6 @@ struct RequestHeaders {
     let fieldName: String
     let value: String
     
-    static let apiKey = RequestHeaders(
-        fieldName: "x-messari-api-key",
-        value: RequestConstants.apiKey)
-    
     static let accept = RequestHeaders(
         fieldName: "Accept",
         value: "application/json")

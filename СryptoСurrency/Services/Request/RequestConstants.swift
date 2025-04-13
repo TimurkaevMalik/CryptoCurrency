@@ -9,5 +9,4 @@ import Foundation
 
 enum RequestConstants {
     static let baseURL = "https://data.messari.io/api/v1"
-    static let apiKey = ""
 }
