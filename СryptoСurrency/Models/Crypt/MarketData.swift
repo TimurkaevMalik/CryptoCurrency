@@ -10,11 +10,9 @@ import Foundation
 struct MarketData: Decodable {
     let priceUSD: Double
     let percentChangeUSDLast24Hours: Double
-    let percentChangeUSDLastHour: Double
     
     enum CodingKeys: String, CodingKey {
         case priceUSD = "price_usd"
         case percentChangeUSDLast24Hours = "percent_change_usd_last_24_hours"
-        case percentChangeUSDLastHour = "percent_change_usd_last_1_hour"
     }
 }
