@@ -59,7 +59,7 @@ final class CryptoService: CryptoServiceProtocol {
     private func makeRequest(
         _ method: HttpMethod,
         endpoint: Endpoint,
-        headers: [RequestHeaders] = [.accept, .apiKey]
+        headers: [RequestHeaders] = [.accept]
     ) -> URLRequest? {
         
         guard let url = endpoint.url else {

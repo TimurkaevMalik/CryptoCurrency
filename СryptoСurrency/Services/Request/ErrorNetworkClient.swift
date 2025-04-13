@@ -14,7 +14,7 @@ enum ErrorNetworkClient: Error {
     var message: String {
         switch self {
         case .operation(let type, let code):
-            return "Network error: \(type.rawValue). Code: \(code)"
+            return "Network error: \(type.rawValue).\n Code: \(code)"
         }
     }
     

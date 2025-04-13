@@ -107,8 +107,8 @@ final class ScheduleView: UIView {
         insertSubview(indicatorView, belowSubview: HStackView)
         
         NSLayoutConstraint.activate([
-            HStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
-            HStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+            HStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 4),
+            HStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -4),
             HStackView.topAnchor.constraint(equalTo: topAnchor),
             HStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
