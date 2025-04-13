@@ -79,7 +79,6 @@ final class ScheduleView: UIView {
                     self.buttonTapped(button)
                 },
                 for: .touchUpInside)
-            ///TODO: element.addAction
             HStackView.addArrangedSubview(button)
         }
     }

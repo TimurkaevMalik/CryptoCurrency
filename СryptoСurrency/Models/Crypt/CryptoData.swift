@@ -6,7 +6,7 @@
 //
 
 import Foundation
-///TODO: проверить верная ли последовательность с точки зрения оптимизации
+
 struct CryptoData: Decodable {
     let id: String
     let name: String
