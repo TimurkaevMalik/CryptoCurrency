@@ -11,14 +11,8 @@ final class ScheduleView: UIView {
     
     var onScheduleChange: ((Schedule) -> Void)?
     
-    ///Вычисляю допустимую ширину для каждой кнопки
-    private lazy var availableButtonWidth: CGFloat = {
-        print(bounds)
-        return bounds.width / 5
-    }()
-    
     ///Подсвечивает выбранный Schedule
-    private let scheduleIndicator = UIView()
+    private let indicatorView = UIView()
     private let HStackView = UIStackView()
     private var buttons: [UIButton] = []
     
@@ -74,6 +68,7 @@ final class ScheduleView: UIView {
         buttons.enumerated().forEach { (index, button) in
             let color: UIColor = index == 0 ? .ypBlackEclipse : .ypGray
             button.setTitleColor(color, for: .normal)
+            button.titleLabel?.textAlignment = .center
             button.translatesAutoresizingMaskIntoConstraints = false
             button.titleLabel?.font = .scheduleButton
             button.tag = index
@@ -92,7 +87,7 @@ final class ScheduleView: UIView {
     private func setupUI() {
         translatesAutoresizingMaskIntoConstraints = false
         HStackView.translatesAutoresizingMaskIntoConstraints = false
-        scheduleIndicator.translatesAutoresizingMaskIntoConstraints = false
+        indicatorView.translatesAutoresizingMaskIntoConstraints = false
         
         backgroundColor = .ypBlueGraylish
         layer.cornerRadius = 30
@@ -102,8 +97,14 @@ final class ScheduleView: UIView {
         HStackView.distribution = .fillEqually
         HStackView.alignment = .fill
         
+        indicatorView.backgroundColor = .ypWhite
+        indicatorView.layer.cornerRadius = 25
+        indicatorView.layer.masksToBounds = true
+        
         addSubview(HStackView)
-        addSubview(scheduleIndicator)
+        addSubview(indicatorView)
+        
+        insertSubview(indicatorView, belowSubview: HStackView)
         
         NSLayoutConstraint.activate([
             HStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
@@ -111,23 +112,36 @@ final class ScheduleView: UIView {
             HStackView.topAnchor.constraint(equalTo: topAnchor),
             HStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
+            indicatorView.topAnchor.constraint(equalTo: topAnchor, constant: 4),
+            indicatorView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4),
+            indicatorView.widthAnchor.constraint(equalToConstant: 70),
+            indicatorView.centerXAnchor.constraint(equalTo: dayButton.centerXAnchor),
+            
             heightAnchor.constraint(equalToConstant: 56)
         ])
     }
-    
+
     private func buttonTapped(_ sender: UIButton) {
         guard let schedule = Schedule(rawValue: sender.tag) else { return }
+        
         onScheduleChange?(schedule)
-        
-        buttons.forEach { button in
-            let color: UIColor = button == sender ? .ypBlackEclipse : .ypGray
-            button.setTitleColor(color, for: .normal)
-        }
-        
-        changeIndicatorPosition()
+        moveIndicator(to: sender)
     }
     
-    private func changeIndicatorPosition() {
+    private func moveIndicator(to sender: UIButton) {
+        UIView.animate(withDuration: 0.4) { [weak self] in
+            guard let self else { return }
+            
+            let buttonFrame = sender.convert(sender.bounds, to: self)
+            self.indicatorView.center.x = buttonFrame.midX
+
+            self.buttons.forEach { button in
+                button.setTitleColor(.ypGray, for: .normal)
+            }
+            
+        } completion: { _ in
+            sender.setTitleColor(.ypBlackEclipse, for: .normal)
+        }
     }
 }
 
