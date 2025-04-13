@@ -19,7 +19,7 @@ final class HomeViewController: UIViewController {
     private lazy var trendContainer = UIView()
     private lazy var cubeImageView = UIImageView()
     private lazy var loaderView = LoaderView()
-
+    
     private lazy var menuButton: MenuButton = {
         MenuButton(actions: menuButtonActions)
     }()

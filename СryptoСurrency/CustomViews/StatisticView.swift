@@ -25,7 +25,7 @@ final class StatisticView: UIView {
     
     private func configure() {
         valueLabel.textColor = .ypBlackEclipse
-        valueLabel.font = .learnMoreButton
+        valueLabel.font = .scheduleButton
         
         titleLabel.font = .currencySymbol
         titleLabel.textColor = .ypGray

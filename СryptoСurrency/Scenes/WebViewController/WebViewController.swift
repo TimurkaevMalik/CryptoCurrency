@@ -26,8 +26,6 @@ final class WebViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .ypWhite
-
         webView.addObserver(
             self,
             forKeyPath: #keyPath(WKWebView.estimatedProgress),

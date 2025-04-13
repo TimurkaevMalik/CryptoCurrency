@@ -16,6 +16,20 @@ final class CurrencyViewController: UIViewController {
     private lazy var statisticTitleLabel = UILabel()
     private lazy var backButton = CircleButton()
     
+    private lazy var priceLabel = UILabel()
+    private lazy var percentLabel = UILabel()
+    private lazy var percentImageView = UIImageView()
+    
+    private lazy var scheduleView: ScheduleView = {
+        let customView = ScheduleView()
+        
+        customView.onScheduleChange = { schedule in
+            print(schedule)
+        }
+        
+        return customView
+    }()
+    
     private lazy var marketcapLabel: StatisticView = {
         let marketcap = vm.currency.marketcap.currentMarketcapUSD
         let marketcapString = formatter.currency(marketcap,
@@ -25,10 +39,6 @@ final class CurrencyViewController: UIViewController {
                                            value: marketcapString)
         return statisticLabel
     }()
-    
-    private lazy var priceLabel = UILabel()
-    private lazy var percentLabel = UILabel()
-    private lazy var percentImageView = UIImageView()
     
     private lazy var circulatingSupplyLabel: StatisticView = {
         let circulating = vm.currency.supply.circulating
@@ -58,6 +68,7 @@ final class CurrencyViewController: UIViewController {
         setupTileView()
         setupPriceLabel()
         setupPercentViews()
+        setupScheduleView()
         setupStatisticContainer()
         setupTrendingLabel()
         setupMarketcapLabel()
@@ -123,6 +134,16 @@ final class CurrencyViewController: UIViewController {
             
             percentImageView.trailingAnchor.constraint(equalTo: percentLabel.leadingAnchor, constant: -5),
             percentImageView.centerYAnchor.constraint(equalTo: percentLabel.centerYAnchor)
+        ])
+    }
+    
+    private func setupScheduleView() {
+        view.addSubview(scheduleView)
+        
+        NSLayoutConstraint.activate([
+            scheduleView.topAnchor.constraint(equalTo: percentLabel.bottomAnchor, constant: 20),
+            scheduleView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .defaultMargin),
+            scheduleView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -.defaultMargin),
         ])
     }
     

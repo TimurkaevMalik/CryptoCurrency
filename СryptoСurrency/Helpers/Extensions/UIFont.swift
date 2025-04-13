@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIFont {
-    static var learnMoreButton: UIFont {
+    static var scheduleButton: UIFont {
         UIFont.systemFont(ofSize: 14, weight: .semibold)
     }
     

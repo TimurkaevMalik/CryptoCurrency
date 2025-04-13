@@ -22,6 +22,7 @@
 		BC8F6FDC2DAAAD290032BF36 /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F6FDB2DAAAD290032BF36 /* CurrencyViewModel.swift */; };
 		BC8F6FDF2DAAAF000032BF36 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F6FDE2DAAAF000032BF36 /* WebViewController.swift */; };
 		BC8F6FE12DAAB55D0032BF36 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F6FE02DAAB55D0032BF36 /* CircleButton.swift */; };
+		BC8F6FE32DAABE750032BF36 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F6FE22DAABE6F0032BF36 /* ScheduleView.swift */; };
 		BCAB55F92DA6ABD400173AC7 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB55F82DA6ABC900173AC7 /* AuthTextField.swift */; };
 		BCAB55FD2DA6BBFC00173AC7 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB55FC2DA6BBF400173AC7 /* UIFont.swift */; };
 		BCAB55FF2DA6BFF200173AC7 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB55FE2DA6BFE700173AC7 /* LoginButton.swift */; };
@@ -71,6 +72,7 @@
 		BC8F6FDB2DAAAD290032BF36 /* CurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
 		BC8F6FDE2DAAAF000032BF36 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		BC8F6FE02DAAB55D0032BF36 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		BC8F6FE22DAABE6F0032BF36 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		BCAB55F82DA6ABC900173AC7 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		BCAB55FC2DA6BBF400173AC7 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		BCAB55FE2DA6BFE700173AC7 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 		BCAB55F72DA6ABB500173AC7 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				BC8F6FE22DAABE6F0032BF36 /* ScheduleView.swift */,
 				BC8F6FE02DAAB55D0032BF36 /* CircleButton.swift */,
 				BC8F6FD92DAAA3F70032BF36 /* StatisticView.swift */,
 				BC8F6FD42DAA7AA00032BF36 /* LoaderView.swift */,
@@ -404,6 +407,7 @@
 				BCE32B162DA8022F00FFD51C /* WalletViewController.swift in Sources */,
 				BCBC9F4B2DA90E4500149241 /* MenuButton.swift in Sources */,
 				BC8F6FD32DAA48BA0032BF36 /* NumFormatter.swift in Sources */,
+				BC8F6FE32DAABE750032BF36 /* ScheduleView.swift in Sources */,
 				BCBC9F402DA8E1BF00149241 /* CryptoService.swift in Sources */,
 				BCE32B2D2DA8370300FFD51C /* CryptoData.swift in Sources */,
 				BCBC9F492DA8F5D200149241 /* HttpMethod.swift in Sources */,
