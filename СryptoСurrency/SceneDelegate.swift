@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  СryptoСurrency
+//  Сryptocurrency
 //
 //  Created by Malik Timurkaev on 09.04.2025.
 //
@@ -17,7 +17,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = ViewController()
+        
+        if AuthService.shared.isAuthenticated {
+            window.rootViewController = TabBarController()
+        } else {
+            
+            let viewModel = AuthViewModel(authService: AuthService.shared)
+            window.rootViewController = AuthViewController(viewModel: viewModel)
+        }
+        
         self.window = window
         window.makeKeyAndVisible()
     }
